@@ -1,0 +1,15 @@
+D:\C#\psfunction\psfunction\bin\Debug\netcoreapp3.1\psfunction.exe
+D:\C#\psfunction\psfunction\bin\Debug\netcoreapp3.1\psfunction.deps.json
+D:\C#\psfunction\psfunction\bin\Debug\netcoreapp3.1\psfunction.runtimeconfig.json
+D:\C#\psfunction\psfunction\bin\Debug\netcoreapp3.1\psfunction.runtimeconfig.dev.json
+D:\C#\psfunction\psfunction\bin\Debug\netcoreapp3.1\psfunction.dll
+D:\C#\psfunction\psfunction\bin\Debug\netcoreapp3.1\psfunction.pdb
+D:\C#\psfunction\psfunction\obj\Debug\netcoreapp3.1\psfunction.csprojAssemblyReference.cache
+D:\C#\psfunction\psfunction\obj\Debug\netcoreapp3.1\psfunction.Form1.resources
+D:\C#\psfunction\psfunction\obj\Debug\netcoreapp3.1\psfunction.csproj.GenerateResource.cache
+D:\C#\psfunction\psfunction\obj\Debug\netcoreapp3.1\psfunction.AssemblyInfoInputs.cache
+D:\C#\psfunction\psfunction\obj\Debug\netcoreapp3.1\psfunction.AssemblyInfo.cs
+D:\C#\psfunction\psfunction\obj\Debug\netcoreapp3.1\psfunction.csproj.CoreCompileInputs.cache
+D:\C#\psfunction\psfunction\obj\Debug\netcoreapp3.1\psfunction.dll
+D:\C#\psfunction\psfunction\obj\Debug\netcoreapp3.1\psfunction.pdb
+D:\C#\psfunction\psfunction\obj\Debug\netcoreapp3.1\psfunction.genruntimeconfig.cache
