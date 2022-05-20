@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Drawing.Imaging;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace psfunction
 {
     public partial class Form1 : Form
     {
+        //以panel为参照的中心点位
+        const int panelCenterX =880;
+        const int panelCenterY = 486;
+
         //bitmap类是用于处理由像素数据定义的图像的对象
         public Bitmap bitmap { get; private set; }
         public Bitmap newbitmap { get; private set; }
-        int width;      //图片宽度
-        int height;     //图片高度
 
         //定义剪裁图片所需用的变量
         bool cut=false;
@@ -53,9 +49,15 @@ namespace psfunction
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string path = openFileDialog1.FileName;
+                
                 bitmap = (Bitmap)Image.FromFile(path);
-                width = bitmap.Width;
-                height = bitmap.Height;
+
+                //每打开图片，picturebox状态要复原，防止因为剪裁收到影响
+                convertedPicture.Width = bitmap.Width;
+                convertedPicture.Height = bitmap.Height;
+                convertedPicture.Location =new Point( (panelCenterX - bitmap.Width / 2),(panelCenterY-bitmap.Height/2));
+
+
                 originalPicture.Image = bitmap.Clone() as Image;
                 convertedPicture.Image = bitmap.Clone() as Image;
             }
@@ -132,17 +134,17 @@ namespace psfunction
         {
             if (bitmap != null)
             {
-                newbitmap = bitmap.Clone() as Bitmap;
-                float centerx = width / 2;
-                float centery = height / 2;
+                newbitmap = (Bitmap)convertedPicture.Image;
+                float centerx = convertedPicture.Width / 2;
+                float centery = convertedPicture.Height / 2;
                 double maxDist = Math.Sqrt(centerx * centerx + centery * centery);
                 double currDist = 0;
                 double factor;
                 Color pixel;
  
-                for(int i = 0; i < width; i++)
+                for(int i = 0; i < convertedPicture.Width; i++)
                 {
-                    for(int j = 0; j < height; j++)
+                    for(int j = 0; j < convertedPicture.Height; j++)
                     {
                         currDist =Math.Sqrt( ((double)i - centerx) * ((double)i - centerx) + ((double)j - centery) * ((double)j - centery));
                         factor = currDist / maxDist;
@@ -173,9 +175,9 @@ namespace psfunction
                 newbitmap = bitmap.Clone() as Bitmap;
                 Color pixel;
                 int ret;
-                for (int x = 0; x < width; x++)
+                for (int x = 0; x < convertedPicture.Width; x++)
                 {
-                    for (int y = 0; y < height; y++)
+                    for (int y = 0; y < convertedPicture.Height; y++)
                     {
                         pixel = newbitmap.GetPixel(x, y);
                         ret = (int)(pixel.R * 0.299 + pixel.G * 0.587 + pixel.B * 0.114);
@@ -202,9 +204,9 @@ namespace psfunction
                 newbitmap = bitmap.Clone() as Bitmap;
                 Color pixel;
                 int red, green, blue;
-                for (int x = 0; x < width; x++)
+                for (int x = 0; x < convertedPicture.Width; x++)
                 {
-                    for (int y = 0; y < height; y++)
+                    for (int y = 0; y < convertedPicture.Height; y++)
                     {
                         pixel = newbitmap.GetPixel(x, y);
                         red = (int)(pixel.R * 0.6);
@@ -234,9 +236,9 @@ namespace psfunction
 
                 Color pixel;
                 int red, green, blue;
-                for (int x = 0; x < width; x++)
+                for (int x = 0; x < convertedPicture.Width; x++)
                 {
-                    for (int y = 0; y < height; y++)
+                    for (int y = 0; y < convertedPicture.Height; y++)
                     {
                         pixel = newbitmap.GetPixel(x, y);
                         red = (int)(255 - pixel.R);
@@ -263,16 +265,16 @@ namespace psfunction
             {
                 newbitmap = bitmap.Clone() as Bitmap;
                 int RIDIO = 10;                                                           //马赛克的尺度，默认为周围两个像素
-                for (int h = 0; h < height; h += RIDIO)
+                for (int h = 0; h < convertedPicture.Height; h += RIDIO)
                 {
-                    for (int w = 0; w < width; w += RIDIO)
+                    for (int w = 0; w < convertedPicture.Width; w += RIDIO)
                     {
                         int avgRed = 0, avgGreen = 0, avgBlue = 0;
                         int count = 0;
                         //取周围的像素
-                        for (int x = w; (x < w + RIDIO && x < width); x++)
+                        for (int x = w; (x < w + RIDIO && x < convertedPicture.Width); x++)
                         {
-                            for (int y = h; (y < h + RIDIO && y < height); y++)
+                            for (int y = h; (y < h + RIDIO && y < convertedPicture.Height); y++)
                             {
                                 Color pixel = newbitmap.GetPixel(x, y);
                                 avgRed += pixel.R;
@@ -286,9 +288,9 @@ namespace psfunction
                         avgBlue = avgBlue / count;
                         avgGreen = avgGreen / count;
                         //设置颜色
-                        for (int x = w; (x < w + RIDIO && x < width); x++)
+                        for (int x = w; (x < w + RIDIO && x < convertedPicture.Width); x++)
                         {
-                            for (int y = h; (y < h + RIDIO && y < height); y++)
+                            for (int y = h; (y < h + RIDIO && y < convertedPicture.Height); y++)
                             {
                                 Color newColor = Color.FromArgb(avgRed, avgGreen, avgBlue);
                                 newbitmap.SetPixel(x, y, newColor);
@@ -312,20 +314,20 @@ namespace psfunction
         {
             try
             {
-                newbitmap = new Bitmap(width, height);
+                newbitmap = new Bitmap(convertedPicture.Width, convertedPicture.Height);
                 Color pixel;
-                for (int x = 1; x < width - 1; x++)
-                    for (int y = 1; y < height - 1; y++)
+                for (int x = 1; x < convertedPicture.Width - 1; x++)
+                    for (int y = 1; y < convertedPicture.Height - 1; y++)
                     {
                         System.Random MyRandom = new Random();
                         int k = MyRandom.Next(123456);
                         //像素块大小
                         int dx = x + k % 19;
                         int dy = y + k % 19;
-                        if (dx >= width)
-                            dx = width - 1;
-                        if (dy >= height)
-                            dy = height - 1;
+                        if (dx >= convertedPicture.Width)
+                            dx = convertedPicture.Width - 1;
+                        if (dy >= convertedPicture.Height)
+                            dy = convertedPicture.Height - 1;
                         pixel = bitmap.GetPixel(dx, dy);
                         newbitmap.SetPixel(x, y, pixel);
                     }
@@ -345,12 +347,12 @@ namespace psfunction
         {
             try
             {
-                newbitmap = new Bitmap(width, height);
+                newbitmap = new Bitmap(convertedPicture.Width, convertedPicture.Height);
                 Color pixel;
                 //高斯模板
                 int[] Gauss = { 1, 2, 1, 2, 4, 2, 1, 2, 1 };
-                for (int x = 1; x < width - 1; x++)
-                    for (int y = 1; y < height - 1; y++)
+                for (int x = 1; x < convertedPicture.Width - 1; x++)
+                    for (int y = 1; y < convertedPicture.Height - 1; y++)
                     {
                         int r = 0, g = 0, b = 0;
                         int Index = 0;
@@ -421,7 +423,7 @@ namespace psfunction
                 double original_x = (double)zoom_x / rate;
                 double original_y = (double)zoom_y / rate;
                 //新图的起始点
-                Pstart = new Point((int)original_x, (int)original_y);
+                Pstart = new Point((int)e.X, (int)e.Y);
                 //画框的起始点
                 start = e.Location;
                 Invalidate();
@@ -478,8 +480,8 @@ namespace psfunction
                 Math.Min(Pstart.X, (int)original_x),
                 Math.Min(Pstart.Y, (int)original_y));
                 Orect.Size = new Size(
-                Math.Abs(Pstart.X - (int)original_x),
-                Math.Abs(Pstart.Y - (int)original_y));
+                Math.Abs(Pstart.X - e.X),
+                Math.Abs(Pstart.Y - e.Y));
                 convertedPicture.Invalidate();
             }
             else//移动功能
@@ -506,11 +508,12 @@ namespace psfunction
         {
             if (blnDraw)
             {
-                Bitmap bitmap = PartDraw(convertedPicture.Image, Orect);
-                this.convertedPicture.Image = bitmap;
+                bitmap = PartDraw(convertedPicture.Image, Orect);
                 this.convertedPicture.Width = bitmap.Width;
                 this.convertedPicture.Height = bitmap.Height;
+                this.convertedPicture.Image = bitmap;
                 this.convertedPicture.SizeMode = PictureBoxSizeMode.StretchImage;
+                convertedPicture.Location = new Point((panelCenterX - this.convertedPicture.Width / 2), (panelCenterY - this.convertedPicture.Height / 2));
                 //结束绘制,控制量置零
                 blnDraw = false;
                 cut = false;
@@ -556,41 +559,39 @@ namespace psfunction
         //鼠标滚轮滚动功能
         private void convertedPicture_MouseWheel(object sender, MouseEventArgs e)
         {
-            int x = e.Location.X;
-            int y = e.Location.Y;
-            int ow = convertedPicture.Width;
-            int oh = convertedPicture.Height;
-            int VX, VY;
-            if (e.Delta > 0)
+            try
             {
-                convertedPicture.Width += zoomStep;
-                convertedPicture.Height += convertedPicture.Height / convertedPicture.Width *zoomStep;
-
-                PropertyInfo pInfo = convertedPicture.GetType().GetProperty("ImageRectangle", BindingFlags.Instance |
-                    BindingFlags.NonPublic);
-                Rectangle rect = (Rectangle)pInfo.GetValue(convertedPicture, null);
-
-                convertedPicture.Width = rect.Width;
-                convertedPicture.Height = rect.Height;
+                int x = e.Location.X;
+                int y = e.Location.Y;
+                int ow = convertedPicture.Width;
+                int oh = convertedPicture.Height;
+                int VX, VY;
+                //一定要加1.0！！这里的double要注意！！
+                double ratio = (1.0 * convertedPicture.Width) / (1.0 * convertedPicture.Height);
+                if (e.Delta > 0)
+                {
+                    convertedPicture.Width += zoomStep;
+                    convertedPicture.Height = Convert.ToInt32(convertedPicture.Width / ratio);
+                }
+                if (e.Delta < 0)
+                {
+                    if (convertedPicture.Width < bitmap.Width / 10)
+                        return;
+                    convertedPicture.Width -= zoomStep;
+                    convertedPicture.Height = Convert.ToInt32(convertedPicture.Width / ratio);
+                }
+                VX = (int)((double)x * (ow - convertedPicture.Width) / ow);
+                VY = (int)((double)y * (oh - convertedPicture.Height) / oh);
+                convertedPicture.Location = new Point(convertedPicture.Location.X + VX, convertedPicture.Location.Y + VY);
             }
-            if (e.Delta < 0)
-            {
-
-                if (convertedPicture.Width < bitmap.Width / 10)
-                    return;
-
-                convertedPicture.Width -= zoomStep;
-                convertedPicture.Height -= convertedPicture.Height / convertedPicture.Width * zoomStep;
-                PropertyInfo pInfo = convertedPicture.GetType().GetProperty("ImageRectangle", BindingFlags.Instance |
-                    BindingFlags.NonPublic);
-                Rectangle rect = (Rectangle)pInfo.GetValue(convertedPicture, null);
-                convertedPicture.Width = rect.Width;
-                convertedPicture.Height = rect.Height;
-            }
-
-            VX = (int)((double)x * (ow - convertedPicture.Width) / ow);
-            VY = (int)((double)y * (oh - convertedPicture.Height) / oh);
-            convertedPicture.Location = new Point(convertedPicture.Location.X + VX, convertedPicture.Location.Y + VY);
+            catch { }
+        }
+        /// <summary>
+        /// 按下居中按钮，图片居中
+        /// </summary>
+        private void centerButton_Click(object sender, EventArgs e)
+        {
+            convertedPicture.Location = new Point((panelCenterX - convertedPicture.Width / 2), (panelCenterY - convertedPicture.Height / 2));
         }
     }
 }

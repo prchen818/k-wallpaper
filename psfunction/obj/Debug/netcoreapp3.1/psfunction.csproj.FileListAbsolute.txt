@@ -13,3 +13,4 @@ D:\C#\psfunction\psfunction\obj\Debug\netcoreapp3.1\psfunction.csproj.CoreCompil
 D:\C#\psfunction\psfunction\obj\Debug\netcoreapp3.1\psfunction.dll
 D:\C#\psfunction\psfunction\obj\Debug\netcoreapp3.1\psfunction.pdb
 D:\C#\psfunction\psfunction\obj\Debug\netcoreapp3.1\psfunction.genruntimeconfig.cache
+D:\C#\psfunction\psfunction\obj\Debug\netcoreapp3.1\psfunction.Properties.Resources.resources

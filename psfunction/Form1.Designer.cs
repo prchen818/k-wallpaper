@@ -30,6 +30,7 @@ namespace psfunction
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.originalPicture = new System.Windows.Forms.PictureBox();
             this.convertedPicture = new System.Windows.Forms.PictureBox();
             this.openButton = new System.Windows.Forms.Button();
@@ -49,6 +50,7 @@ namespace psfunction
             this.softButton = new System.Windows.Forms.Button();
             this.cutButton = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.centerButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.originalPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.convertedPicture)).BeginInit();
             this.mainPanel.SuspendLayout();
@@ -56,7 +58,9 @@ namespace psfunction
             // 
             // originalPicture
             // 
+            this.originalPicture.BackColor = System.Drawing.SystemColors.Control;
             this.originalPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.originalPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.originalPicture.Location = new System.Drawing.Point(12, 12);
             this.originalPicture.Name = "originalPicture";
             this.originalPicture.Size = new System.Drawing.Size(124, 93);
@@ -160,6 +164,7 @@ namespace psfunction
             // tipLabel
             // 
             this.tipLabel.AutoSize = true;
+            this.tipLabel.BackColor = System.Drawing.SystemColors.Control;
             this.tipLabel.Location = new System.Drawing.Point(13, 965);
             this.tipLabel.Name = "tipLabel";
             this.tipLabel.Size = new System.Drawing.Size(54, 20);
@@ -203,18 +208,32 @@ namespace psfunction
             // 
             // mainPanel
             // 
+            this.mainPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mainPanel.Controls.Add(this.convertedPicture);
-            this.mainPanel.Location = new System.Drawing.Point(152, 12);
+            this.mainPanel.Location = new System.Drawing.Point(151, 12);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1760, 973);
+            this.mainPanel.Size = new System.Drawing.Size(1761, 973);
             this.mainPanel.TabIndex = 14;
+            // 
+            // centerButton
+            // 
+            this.centerButton.Location = new System.Drawing.Point(13, 677);
+            this.centerButton.Name = "centerButton";
+            this.centerButton.Size = new System.Drawing.Size(94, 29);
+            this.centerButton.TabIndex = 15;
+            this.centerButton.Text = "居中";
+            this.centerButton.UseVisualStyleBackColor = true;
+            this.centerButton.Click += new System.EventHandler(this.centerButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1924, 997);
+            this.Controls.Add(this.centerButton);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.cutButton);
             this.Controls.Add(this.softButton);
@@ -260,6 +279,7 @@ namespace psfunction
         private System.Windows.Forms.Button softButton;
         private System.Windows.Forms.Button cutButton;
         private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Button centerButton;
     }
 }
 
