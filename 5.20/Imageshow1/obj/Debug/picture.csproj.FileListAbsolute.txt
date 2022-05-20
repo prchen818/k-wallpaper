@@ -1,0 +1,10 @@
+F:\360Downloads\Picture-Browser-master\bin\Debug\pictureShow.exe.config
+F:\360Downloads\Picture-Browser-master\bin\Debug\pictureShow.exe
+F:\360Downloads\Picture-Browser-master\bin\Debug\pictureShow.pdb
+F:\360Downloads\Picture-Browser-master\obj\Debug\picture.csprojResolveAssemblyReference.cache
+F:\360Downloads\Picture-Browser-master\obj\Debug\picture.Form1.resources
+F:\360Downloads\Picture-Browser-master\obj\Debug\picture.Form2.resources
+F:\360Downloads\Picture-Browser-master\obj\Debug\pictureShow.Properties.Resources.resources
+F:\360Downloads\Picture-Browser-master\obj\Debug\picture.csproj.GenerateResource.Cache
+F:\360Downloads\Picture-Browser-master\obj\Debug\pictureShow.exe
+F:\360Downloads\Picture-Browser-master\obj\Debug\pictureShow.pdb
