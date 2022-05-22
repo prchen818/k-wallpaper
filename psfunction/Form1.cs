@@ -135,16 +135,16 @@ namespace psfunction
             if (bitmap != null)
             {
                 newbitmap = (Bitmap)convertedPicture.Image;
-                float centerx = convertedPicture.Width / 2;
-                float centery = convertedPicture.Height / 2;
+                float centerx = newbitmap.Width / 2;
+                float centery = newbitmap.Height / 2;
                 double maxDist = Math.Sqrt(centerx * centerx + centery * centery);
                 double currDist = 0;
                 double factor;
                 Color pixel;
  
-                for(int i = 0; i < convertedPicture.Width; i++)
+                for(int i = 0; i < newbitmap.Width; i++)
                 {
-                    for(int j = 0; j < convertedPicture.Height; j++)
+                    for(int j = 0; j < newbitmap.Height; j++)
                     {
                         currDist =Math.Sqrt( ((double)i - centerx) * ((double)i - centerx) + ((double)j - centery) * ((double)j - centery));
                         factor = currDist / maxDist;
@@ -175,9 +175,9 @@ namespace psfunction
                 newbitmap = bitmap.Clone() as Bitmap;
                 Color pixel;
                 int ret;
-                for (int x = 0; x < convertedPicture.Width; x++)
+                for (int x = 0; x < newbitmap.Width; x++)
                 {
-                    for (int y = 0; y < convertedPicture.Height; y++)
+                    for (int y = 0; y < newbitmap.Height; y++)
                     {
                         pixel = newbitmap.GetPixel(x, y);
                         ret = (int)(pixel.R * 0.299 + pixel.G * 0.587 + pixel.B * 0.114);
@@ -204,9 +204,9 @@ namespace psfunction
                 newbitmap = bitmap.Clone() as Bitmap;
                 Color pixel;
                 int red, green, blue;
-                for (int x = 0; x < convertedPicture.Width; x++)
+                for (int x = 0; x < newbitmap.Width; x++)
                 {
-                    for (int y = 0; y < convertedPicture.Height; y++)
+                    for (int y = 0; y < newbitmap.Height; y++)
                     {
                         pixel = newbitmap.GetPixel(x, y);
                         red = (int)(pixel.R * 0.6);
@@ -236,9 +236,9 @@ namespace psfunction
 
                 Color pixel;
                 int red, green, blue;
-                for (int x = 0; x < convertedPicture.Width; x++)
+                for (int x = 0; x < newbitmap.Width; x++)
                 {
-                    for (int y = 0; y < convertedPicture.Height; y++)
+                    for (int y = 0; y < newbitmap.Height; y++)
                     {
                         pixel = newbitmap.GetPixel(x, y);
                         red = (int)(255 - pixel.R);
@@ -265,16 +265,16 @@ namespace psfunction
             {
                 newbitmap = bitmap.Clone() as Bitmap;
                 int RIDIO = 10;                                                           //马赛克的尺度，默认为周围两个像素
-                for (int h = 0; h < convertedPicture.Height; h += RIDIO)
+                for (int h = 0; h < newbitmap.Height; h += RIDIO)
                 {
-                    for (int w = 0; w < convertedPicture.Width; w += RIDIO)
+                    for (int w = 0; w < newbitmap.Width; w += RIDIO)
                     {
                         int avgRed = 0, avgGreen = 0, avgBlue = 0;
                         int count = 0;
                         //取周围的像素
-                        for (int x = w; (x < w + RIDIO && x < convertedPicture.Width); x++)
+                        for (int x = w; (x < w + RIDIO && x < newbitmap.Width); x++)
                         {
-                            for (int y = h; (y < h + RIDIO && y < convertedPicture.Height); y++)
+                            for (int y = h; (y < h + RIDIO && y < newbitmap.Height); y++)
                             {
                                 Color pixel = newbitmap.GetPixel(x, y);
                                 avgRed += pixel.R;
@@ -288,9 +288,9 @@ namespace psfunction
                         avgBlue = avgBlue / count;
                         avgGreen = avgGreen / count;
                         //设置颜色
-                        for (int x = w; (x < w + RIDIO && x < convertedPicture.Width); x++)
+                        for (int x = w; (x < w + RIDIO && x < newbitmap.Width); x++)
                         {
-                            for (int y = h; (y < h + RIDIO && y < convertedPicture.Height); y++)
+                            for (int y = h; (y < h + RIDIO && y < newbitmap.Height); y++)
                             {
                                 Color newColor = Color.FromArgb(avgRed, avgGreen, avgBlue);
                                 newbitmap.SetPixel(x, y, newColor);
@@ -314,20 +314,20 @@ namespace psfunction
         {
             try
             {
-                newbitmap = new Bitmap(convertedPicture.Width, convertedPicture.Height);
+                newbitmap = bitmap.Clone() as Bitmap;
                 Color pixel;
-                for (int x = 1; x < convertedPicture.Width - 1; x++)
-                    for (int y = 1; y < convertedPicture.Height - 1; y++)
+                for (int x = 1; x < newbitmap.Width - 1; x++)
+                    for (int y = 1; y < newbitmap.Height - 1; y++)
                     {
                         System.Random MyRandom = new Random();
                         int k = MyRandom.Next(123456);
                         //像素块大小
                         int dx = x + k % 19;
                         int dy = y + k % 19;
-                        if (dx >= convertedPicture.Width)
-                            dx = convertedPicture.Width - 1;
-                        if (dy >= convertedPicture.Height)
-                            dy = convertedPicture.Height - 1;
+                        if (dx >= newbitmap.Width)
+                            dx = newbitmap.Width - 1;
+                        if (dy >= newbitmap.Height)
+                            dy = newbitmap.Height - 1;
                         pixel = bitmap.GetPixel(dx, dy);
                         newbitmap.SetPixel(x, y, pixel);
                     }
@@ -347,12 +347,12 @@ namespace psfunction
         {
             try
             {
-                newbitmap = new Bitmap(convertedPicture.Width, convertedPicture.Height);
+                newbitmap = bitmap.Clone() as Bitmap;
                 Color pixel;
                 //高斯模板
                 int[] Gauss = { 1, 2, 1, 2, 4, 2, 1, 2, 1 };
-                for (int x = 1; x < convertedPicture.Width - 1; x++)
-                    for (int y = 1; y < convertedPicture.Height - 1; y++)
+                for (int x = 1; x < newbitmap.Width - 1; x++)
+                    for (int y = 1; y < newbitmap.Height - 1; y++)
                     {
                         int r = 0, g = 0, b = 0;
                         int Index = 0;
@@ -583,6 +583,7 @@ namespace psfunction
                 VX = (int)((double)x * (ow - convertedPicture.Width) / ow);
                 VY = (int)((double)y * (oh - convertedPicture.Height) / oh);
                 convertedPicture.Location = new Point(convertedPicture.Location.X + VX, convertedPicture.Location.Y + VY);
+                bitmap = this.convertedPicture.Image.Clone() as Bitmap;
             }
             catch { }
         }
