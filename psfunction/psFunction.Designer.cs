@@ -1,7 +1,7 @@
 ﻿
 namespace psfunction
 {
-    partial class Form1
+    partial class psFunction
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,13 +30,13 @@ namespace psfunction
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(psFunction));
             this.originalPicture = new System.Windows.Forms.PictureBox();
             this.convertedPicture = new System.Windows.Forms.PictureBox();
             this.openButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.darkCornerButton = new System.Windows.Forms.Button();
-            this.brightnessButton = new System.Windows.Forms.Button();
+            this.brightnessButtonminus = new System.Windows.Forms.Button();
             this.fogButton = new System.Windows.Forms.Button();
             this.reliefButton = new System.Windows.Forms.Button();
             this.mosaicButton = new System.Windows.Forms.Button();
@@ -51,6 +51,8 @@ namespace psfunction
             this.cutButton = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.centerButton = new System.Windows.Forms.Button();
+            this.brightnessPlus = new System.Windows.Forms.Button();
+            this.brightnessLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.originalPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.convertedPicture)).BeginInit();
             this.mainPanel.SuspendLayout();
@@ -113,15 +115,15 @@ namespace psfunction
             this.darkCornerButton.UseVisualStyleBackColor = true;
             this.darkCornerButton.Click += new System.EventHandler(this.darkCornerButton_Click);
             // 
-            // brightnessButton
+            // brightnessButtonminus
             // 
-            this.brightnessButton.Location = new System.Drawing.Point(12, 262);
-            this.brightnessButton.Name = "brightnessButton";
-            this.brightnessButton.Size = new System.Drawing.Size(94, 29);
-            this.brightnessButton.TabIndex = 5;
-            this.brightnessButton.Text = "亮度";
-            this.brightnessButton.UseVisualStyleBackColor = true;
-            this.brightnessButton.Click += new System.EventHandler(this.brightnessButton_Click);
+            this.brightnessButtonminus.Location = new System.Drawing.Point(56, 262);
+            this.brightnessButtonminus.Name = "brightnessButtonminus";
+            this.brightnessButtonminus.Size = new System.Drawing.Size(20, 29);
+            this.brightnessButtonminus.TabIndex = 5;
+            this.brightnessButtonminus.Text = "<";
+            this.brightnessButtonminus.UseVisualStyleBackColor = true;
+            this.brightnessButtonminus.Click += new System.EventHandler(this.brightnessButton_Click);
             // 
             // fogButton
             // 
@@ -226,6 +228,27 @@ namespace psfunction
             this.centerButton.UseVisualStyleBackColor = true;
             this.centerButton.Click += new System.EventHandler(this.centerButton_Click);
             // 
+            // brightnessPlus
+            // 
+            this.brightnessPlus.Location = new System.Drawing.Point(82, 262);
+            this.brightnessPlus.Name = "brightnessPlus";
+            this.brightnessPlus.Size = new System.Drawing.Size(20, 29);
+            this.brightnessPlus.TabIndex = 16;
+            this.brightnessPlus.Text = ">";
+            this.brightnessPlus.UseVisualStyleBackColor = true;
+            this.brightnessPlus.Click += new System.EventHandler(this.brightnessPlus_Click);
+            // 
+            // brightnessLabel
+            // 
+            this.brightnessLabel.AutoSize = true;
+            this.brightnessLabel.BackColor = System.Drawing.SystemColors.Window;
+            this.brightnessLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.brightnessLabel.Location = new System.Drawing.Point(13, 266);
+            this.brightnessLabel.Name = "brightnessLabel";
+            this.brightnessLabel.Size = new System.Drawing.Size(41, 22);
+            this.brightnessLabel.TabIndex = 17;
+            this.brightnessLabel.Text = "亮度";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -233,6 +256,8 @@ namespace psfunction
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1924, 997);
+            this.Controls.Add(this.brightnessLabel);
+            this.Controls.Add(this.brightnessPlus);
             this.Controls.Add(this.centerButton);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.cutButton);
@@ -242,7 +267,7 @@ namespace psfunction
             this.Controls.Add(this.mosaicButton);
             this.Controls.Add(this.reliefButton);
             this.Controls.Add(this.fogButton);
-            this.Controls.Add(this.brightnessButton);
+            this.Controls.Add(this.brightnessButtonminus);
             this.Controls.Add(this.darkCornerButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.openButton);
@@ -265,7 +290,7 @@ namespace psfunction
         private System.Windows.Forms.Button openButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button darkCornerButton;
-        private System.Windows.Forms.Button brightnessButton;
+        private System.Windows.Forms.Button brightnessButtonminus;
         private System.Windows.Forms.Button fogButton;
         private System.Windows.Forms.Button reliefButton;
         private System.Windows.Forms.Button mosaicButton;
@@ -280,6 +305,8 @@ namespace psfunction
         private System.Windows.Forms.Button cutButton;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Button centerButton;
+        private System.Windows.Forms.Button brightnessPlus;
+        private System.Windows.Forms.Label brightnessLabel;
     }
 }
 

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace psfunction
 {
-    public partial class Form1 : Form
+    public partial class psFunction : Form
     {
         //以panel为参照的中心点位
         const int panelCenterX =880;
@@ -29,7 +29,7 @@ namespace psfunction
         bool isMove = false;    //判断鼠标在picturebox上移动时，是否处于拖拽过程(鼠标左键是否按下)
         int zoomStep = 20;      //缩放步长
 
-        public Form1()
+        public psFunction()
         {
         InitializeComponent();
         }
@@ -195,7 +195,7 @@ namespace psfunction
 
         }
         /// <summary>
-        /// 此方法用于调整图片亮度
+        /// 此方法用于减少图片亮度
         /// </summary>
         private void brightnessButton_Click(object sender, EventArgs e)
         {
@@ -209,9 +209,44 @@ namespace psfunction
                     for (int y = 0; y < newbitmap.Height; y++)
                     {
                         pixel = newbitmap.GetPixel(x, y);
-                        red = (int)(pixel.R * 0.6);
-                        green = (int)(pixel.G * 0.6);
-                        blue = (int)(pixel.B * 0.6);
+                        red = (int)(pixel.R * 0.9);
+                        green = (int)(pixel.G * 0.9);
+                        blue = (int)(pixel.B * 0.9);
+                        newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
+                    }
+                }
+                bitmap = newbitmap.Clone() as Bitmap;
+                convertedPicture.Image = bitmap.Clone() as Image;
+            }
+            else
+            {
+                tipLabel.Text = ("加载图片失败！错误！");
+                timer1.Enabled = true;
+            }
+        }
+        /// <summary>
+        /// 此方法用于增加图片亮度
+        /// </summary>
+        private void brightnessPlus_Click(object sender, EventArgs e)
+        {
+            if (bitmap != null)
+            {
+                newbitmap = bitmap.Clone() as Bitmap;
+                Color pixel;
+                int red, green, blue;
+                for (int x = 0; x < newbitmap.Width; x++)
+                {
+                    for (int y = 0; y < newbitmap.Height; y++)
+                    {
+                        pixel = newbitmap.GetPixel(x, y);
+                        //增加亮度，溢出则置最大值
+                        red = (int)(pixel.R * 1.1);
+                        green = (int)(pixel.G * 1.1);
+                        blue = (int)(pixel.B * 1.1);
+                        if (red > 255) red = 255;
+                        if (green > 255) green = 255;
+                        if (blue > 255) blue = 255;
+
                         newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
                     }
                 }
@@ -594,5 +629,7 @@ namespace psfunction
         {
             convertedPicture.Location = new Point((panelCenterX - convertedPicture.Width / 2), (panelCenterY - convertedPicture.Height / 2));
         }
+
+  
     }
 }

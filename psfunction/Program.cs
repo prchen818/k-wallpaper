@@ -17,7 +17,7 @@ namespace psfunction
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WPLib());
+            Application.Run(new psFunction());
         }
     }
 }
