@@ -35,10 +35,7 @@ namespace k_wallpaper
                         string sourcePath = ofd.FileName;//临时存放图片源位置
                         string filename = Path.GetFileName(ofd.FileName);//图片的真实名字
                         string destPath = storePath + filename;//目标存放位置
-                        if (!System.IO.Directory.Exists(storePath))
-                        {
-                            System.IO.Directory.CreateDirectory(storePath);
-                        }
+                        
                         System.IO.File.Copy(sourcePath, destPath);
                         refresh();
                         MessageBox.Show("导入成功！");
@@ -53,23 +50,35 @@ namespace k_wallpaper
 
         private void refresh()
         {
-            picBox.Controls.Clear();
-            string[] imgs = Directory.GetFiles(storePath, "*.jpg|*.jpeg");
+            if (!System.IO.Directory.Exists(storePath))
+            {
+                System.IO.Directory.CreateDirectory(storePath);
+            }
+            picBox.Clear();
+            string[] imgs = Directory.GetFiles(storePath, "*.jpg");
             if (imgs.Length == 0)
             {
                 UILabel lb = new UILabel();
                 lb.Text = "壁纸库为空";
-                picBox.Controls.Add(lb);
+                picBox.Add(lb);
+                return;
             }
             foreach (string img in imgs)
             {
                 PictureBox pb = new PictureBox();
                 pb.Size = new Size(320, 180);
-                pb.Image = Image.FromFile(img);
+                pb.ImageLocation = img;
                 pb.SizeMode = PictureBoxSizeMode.Zoom;
                 pb.BorderStyle = BorderStyle.FixedSingle;
-                picBox.Controls.Add(pb);
+                picBox.Add(pb);
             }
         }
+
+        private void showDetails(object sender, EventArgs e)
+        {
+            PictureBox pic = (PictureBox)sender;
+            
+        }
+
     }
 }
