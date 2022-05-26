@@ -4,25 +4,24 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sunny.UI;
 
-namespace psfunction
+namespace k_wallpaper
 {
-    public partial class WPLib : Form
+    public partial class WallpaperLib : UIForm
     {
-        public WPLib()
+        public WallpaperLib()
         {
             InitializeComponent();
             refresh();
         }
 
         string storePath = @"Resources/";
-        
-        /// <summary>
-        /// 导入壁纸：
-        /// 将壁纸文件从源路径复制到程序数据目录
-        /// </summary>
+
         private void importBtn_Click(object sender, EventArgs e)
         {
             try
@@ -36,44 +35,50 @@ namespace psfunction
                         string sourcePath = ofd.FileName;//临时存放图片源位置
                         string filename = Path.GetFileName(ofd.FileName);//图片的真实名字
                         string destPath = storePath + filename;//目标存放位置
-                        if (!System.IO.Directory.Exists(storePath))
-                        {
-                            System.IO.Directory.CreateDirectory(storePath);
-                        }
+                        
                         System.IO.File.Copy(sourcePath, destPath);
+                        refresh();
                         MessageBox.Show("导入成功！");
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        /// <summary>
-        /// 刷新壁纸库显示
-        /// </summary>
         private void refresh()
         {
-            picBox.Controls.Clear();
-            string[] imgs = Directory.GetFiles(storePath,"*.jpg");
+            if (!System.IO.Directory.Exists(storePath))
+            {
+                System.IO.Directory.CreateDirectory(storePath);
+            }
+            picBox.Clear();
+            string[] imgs = Directory.GetFiles(storePath, "*.jpg");
+            if (imgs.Length == 0)
+            {
+                UILabel lb = new UILabel();
+                lb.Text = "壁纸库为空";
+                picBox.Add(lb);
+                return;
+            }
             foreach (string img in imgs)
             {
                 PictureBox pb = new PictureBox();
                 pb.Size = new Size(320, 180);
-                pb.Image = Image.FromFile(img);
+                pb.ImageLocation = img;
                 pb.SizeMode = PictureBoxSizeMode.Zoom;
                 pb.BorderStyle = BorderStyle.FixedSingle;
-                picBox.Controls.Add(pb);
+                picBox.Add(pb);
             }
         }
 
-        private void refreshBtn_Click(object sender, EventArgs e)
+        private void showDetails(object sender, EventArgs e)
         {
-            refresh();
+            PictureBox pic = (PictureBox)sender;
+            
         }
 
-        
     }
 }
