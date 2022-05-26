@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PSFunctionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PSFunctionForm.Designer.cs">
+      <DependentUpon>PSFunctionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WallpaperLib.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="PSFunctionForm.resx">
+      <DependentUpon>PSFunctionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WallpaperLib.resx">
       <DependentUpon>WallpaperLib.cs</DependentUpon>
     </EmbeddedResource>
