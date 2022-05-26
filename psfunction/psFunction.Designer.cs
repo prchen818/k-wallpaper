@@ -180,7 +180,7 @@ namespace psfunction
             // 
             // darkButton
             // 
-            this.darkButton.Location = new System.Drawing.Point(13, 438);
+            this.darkButton.Location = new System.Drawing.Point(13, 402);
             this.darkButton.Name = "darkButton";
             this.darkButton.Size = new System.Drawing.Size(94, 29);
             this.darkButton.TabIndex = 11;
@@ -190,7 +190,7 @@ namespace psfunction
             // 
             // softButton
             // 
-            this.softButton.Location = new System.Drawing.Point(13, 474);
+            this.softButton.Location = new System.Drawing.Point(13, 437);
             this.softButton.Name = "softButton";
             this.softButton.Size = new System.Drawing.Size(94, 29);
             this.softButton.TabIndex = 12;
@@ -200,7 +200,7 @@ namespace psfunction
             // 
             // cutButton
             // 
-            this.cutButton.Location = new System.Drawing.Point(13, 629);
+            this.cutButton.Location = new System.Drawing.Point(13, 517);
             this.cutButton.Name = "cutButton";
             this.cutButton.Size = new System.Drawing.Size(94, 29);
             this.cutButton.TabIndex = 13;
@@ -220,7 +220,7 @@ namespace psfunction
             // 
             // centerButton
             // 
-            this.centerButton.Location = new System.Drawing.Point(13, 677);
+            this.centerButton.Location = new System.Drawing.Point(13, 552);
             this.centerButton.Name = "centerButton";
             this.centerButton.Size = new System.Drawing.Size(94, 29);
             this.centerButton.TabIndex = 15;
@@ -249,7 +249,7 @@ namespace psfunction
             this.brightnessLabel.TabIndex = 17;
             this.brightnessLabel.Text = "亮度";
             // 
-            // Form1
+            // psFunction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -272,7 +272,7 @@ namespace psfunction
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.openButton);
             this.Controls.Add(this.originalPicture);
-            this.Name = "Form1";
+            this.Name = "psFunction";
             this.Text = "壁纸自定义";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.originalPicture)).EndInit();

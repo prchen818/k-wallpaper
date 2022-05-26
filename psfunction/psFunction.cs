@@ -39,13 +39,14 @@ namespace psfunction
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Enabled = false;
-            tipLabel.Text = "忙碌中";
+            tipLabel.Text = "空闲中";
         }
         /// <summary>
         /// 打开图片
         /// </summary>
         private void openButton_Click(object sender, EventArgs e)
         {
+            tipLabel.Text = "正在打开";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string path = openFileDialog1.FileName;
@@ -63,12 +64,14 @@ namespace psfunction
             }
             //每打开图片，更改cut
             cut = false;
+            tipLabel.Text = "空闲中";
         }
        /// <summary>
        /// 保存图片
        /// </summary>
         private void saveButton_Click(object sender, EventArgs e)
         {
+            tipLabel.Text = "正在保存";
             bool isSave = true;
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -122,6 +125,7 @@ namespace psfunction
                     }
                 }
             }
+            tipLabel.Text = "空闲中";
         }
         /// <summary>
         /// 添加暗角：
@@ -132,6 +136,7 @@ namespace psfunction
         /// </summary>
         private void darkCornerButton_Click(object sender, EventArgs e)
         {
+            tipLabel.Text = "正在绘制暗角";
             if (bitmap != null)
             {
                 newbitmap = (Bitmap)convertedPicture.Image;
@@ -164,12 +169,14 @@ namespace psfunction
                 tipLabel.Text = ("加载图片失败！错误！");
                 timer1.Enabled = true;
             }
+            tipLabel.Text = "空闲中";
         }
         /// <summary>
         /// 此方法将图片原有的颜色去除，留下灰色
         /// </summary>
         private void darkButton_Click(object sender, EventArgs e)
         {
+            tipLabel.Text = "正在去色";
             if (bitmap != null)
             {
                 newbitmap = bitmap.Clone() as Bitmap;
@@ -192,13 +199,14 @@ namespace psfunction
                 tipLabel.Text = ("加载图片失败！错误！");
                 timer1.Enabled = true;
             }
-
+            tipLabel.Text = "空闲中";
         }
         /// <summary>
         /// 此方法用于减少图片亮度
         /// </summary>
         private void brightnessButton_Click(object sender, EventArgs e)
         {
+            tipLabel.Text = "正在调整亮度";
             if (bitmap != null)
             {
                 newbitmap = bitmap.Clone() as Bitmap;
@@ -223,12 +231,14 @@ namespace psfunction
                 tipLabel.Text = ("加载图片失败！错误！");
                 timer1.Enabled = true;
             }
+            tipLabel.Text = "空闲中";
         }
         /// <summary>
         /// 此方法用于增加图片亮度
         /// </summary>
         private void brightnessPlus_Click(object sender, EventArgs e)
         {
+            tipLabel.Text = "正在调整亮度";
             if (bitmap != null)
             {
                 newbitmap = bitmap.Clone() as Bitmap;
@@ -258,6 +268,7 @@ namespace psfunction
                 tipLabel.Text = ("加载图片失败！错误！");
                 timer1.Enabled = true;
             }
+            tipLabel.Text = "空闲中";
         }
         /// <summary>
         /// 浮雕效果就是把RGB三个颜色取反。 
@@ -265,6 +276,7 @@ namespace psfunction
         /// </summary>
         private void reliefButton_Click(object sender, EventArgs e)
         {
+            tipLabel.Text = "正在进行浮雕";
             if (bitmap != null)
             {
                 newbitmap = bitmap.Clone() as Bitmap;
@@ -290,12 +302,14 @@ namespace psfunction
                 tipLabel.Text = ("加载图片失败！错误！");
                 timer1.Enabled = true;
             }
+            tipLabel.Text = "空闲中";
         }
         /// <summary>
         /// 实现图片马赛克效果
         /// </summary>
         private void mosaicButton_Click(object sender, EventArgs e)
         {
+            tipLabel.Text = "正在绘制马赛克";
             if (bitmap != null)
             {
                 newbitmap = bitmap.Clone() as Bitmap;
@@ -341,6 +355,7 @@ namespace psfunction
                 tipLabel.Text = ("加载图片失败！错误！");
                 timer1.Enabled = true;
             }
+            tipLabel.Text = "空闲中";
         }
         /// <summary>
         /// 图像雾化效果
@@ -349,6 +364,7 @@ namespace psfunction
         {
             try
             {
+                tipLabel.Text = "正在绘制雾化效果";
                 newbitmap = bitmap.Clone() as Bitmap;
                 Color pixel;
                 for (int x = 1; x < newbitmap.Width - 1; x++)
@@ -368,6 +384,7 @@ namespace psfunction
                     }
                 bitmap = newbitmap.Clone() as Bitmap;
                 convertedPicture.Image = bitmap.Clone() as Image;
+                tipLabel.Text = "空闲中";
             }
             catch (Exception ex)
             {
@@ -382,6 +399,7 @@ namespace psfunction
         {
             try
             {
+                tipLabel.Text = "正在柔化";
                 newbitmap = bitmap.Clone() as Bitmap;
                 Color pixel;
                 //高斯模板
@@ -414,6 +432,7 @@ namespace psfunction
                     }
                 bitmap = newbitmap.Clone() as Bitmap;
                 convertedPicture.Image = bitmap.Clone() as Image;
+                tipLabel.Text = "空闲中";
             }
             catch (Exception ex)
             {
@@ -552,7 +571,7 @@ namespace psfunction
                 //结束绘制,控制量置零
                 blnDraw = false;
                 cut = false;
-                tipLabel.Text = "忙碌中";
+                tipLabel.Text = "空闲中";
             }
             else//移动功能
             {
@@ -629,7 +648,5 @@ namespace psfunction
         {
             convertedPicture.Location = new Point((panelCenterX - convertedPicture.Width / 2), (panelCenterY - convertedPicture.Height / 2));
         }
-
-  
     }
 }
