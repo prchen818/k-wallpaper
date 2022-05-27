@@ -17,5 +17,12 @@ namespace k_wallpaper
         {
             InitializeComponent();
         }
+
+        private string picPath;
+        public PSFunctionForm(string path)
+        {
+            InitializeComponent();
+            picPath = path;
+        }
     }
 }
