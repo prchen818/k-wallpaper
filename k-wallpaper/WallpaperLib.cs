@@ -70,7 +70,7 @@ namespace k_wallpaper
                 pb.ImageLocation = img;
                 pb.SizeMode = PictureBoxSizeMode.Zoom;
                 pb.BorderStyle = BorderStyle.FixedSingle;
-                pb.DoubleClick += new System.EventHandler(showDetails);
+                pb.DoubleClick += new EventHandler(showDetails);
                 picBox.Add(pb);
             }
         }
@@ -79,6 +79,7 @@ namespace k_wallpaper
         {
             PictureBox pic = (PictureBox)sender;
             PSFunctionForm psfrom = new PSFunctionForm(pic.ImageLocation);
+            psfrom.Show();
         }
 
     }
