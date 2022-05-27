@@ -54,12 +54,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="wallpaperimg.cs" />
+    <Compile Include="selfdesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="selfdesign.Designer.cs">
+      <DependentUpon>selfdesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="instruction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="instruction.Designer.cs">
+      <DependentUpon>instruction.cs</DependentUpon>
+    </Compile>
     <Compile Include="PSFunctionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PSFunctionForm.Designer.cs">
       <DependentUpon>PSFunctionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="startexception.cs" />
+    <Compile Include="util.cs" />
+    <Compile Include="wallpaper.cs" />
+    <Compile Include="wallpapercore.cs" />
     <Compile Include="WallpaperLib.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +91,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="selfdesign.resx">
+      <DependentUpon>selfdesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="instruction.resx">
+      <DependentUpon>instruction.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mainform.resx">
       <DependentUpon>Mainform.cs</DependentUpon>
     </EmbeddedResource>
