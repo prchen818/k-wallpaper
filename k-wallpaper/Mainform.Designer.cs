@@ -66,6 +66,7 @@
             this.uiImageButton2.TabStop = false;
             this.uiImageButton2.Text = "待办事项";
             this.uiImageButton2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiImageButton2.Click += new System.EventHandler(this.uiImageButton2_Click);
             // 
             // uiButton1
             // 

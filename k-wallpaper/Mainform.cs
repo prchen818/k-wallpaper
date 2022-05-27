@@ -34,6 +34,13 @@ namespace k_wallpaper
 
         private void uiImageButton1_Click(object sender, EventArgs e)
         {
+            WallpaperLib sd = new WallpaperLib();
+            this.Hide();
+            sd.Show();
+        }
+
+        private void uiImageButton2_Click(object sender, EventArgs e)
+        {
             selfdesign sd = new selfdesign();
             this.Hide();
             sd.Show();
