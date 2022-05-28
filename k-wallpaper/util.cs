@@ -8,13 +8,12 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Data;
-using System.Windows;
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.Windows.Markup;
 using System.Runtime.Serialization;
-
-
+using System.Media;
+using System.Windows.Interop;
 
 namespace k_wallpaper
 {
@@ -43,19 +42,71 @@ namespace k_wallpaper
 
         [DllImport("user32.dll")]
         public static extern bool EnumWindows(EnumWindowsProc proc, IntPtr lParam);
+
+/*        internal static void SetWindowPos(IntPtr wallpaperHandle, IntPtr zero, int v1, int v2, int width, int height, System.Range range)
+        {
+            throw new NotImplementedException();
+        }
+*/
         public delegate bool EnumWindowsProc(IntPtr hwnd, IntPtr lParam);
 
         [DllImport("user32.dll")]
         public static extern IntPtr SetParent(IntPtr hwnd, IntPtr parentHwnd);
-   
-        public static Rectangle GetFullscreen()
+        public enum SystemMetricsFlags
         {
-            int X = Screen.PrimaryScreen.WorkingArea.Width;
-            int Y = Screen.PrimaryScreen.WorkingArea.Width;
-            return new Rectangle(0, 0, X, Y);
-       
+            SM_CXSCREEN = 0,
+            SM_CYSCREEN = 1
+        };
+        //获取系统桌面尺寸
+
+        [DllImport("user32.dll", EntryPoint = "GetSystemMetrics")]
+        public static extern int GetSystemMetrics(SystemMetricsFlags flags);
+
+        //转为像素
+        public static void TransformFromPixels(int pxX, int pxY, out int X, out int Y)
+        {
+            System.Windows.Media.Matrix matrix = new HwndSource(new HwndSourceParameters()).CompositionTarget.TransformToDevice;
+            X = (int)(pxX / matrix.M11);
+            Y = (int)(pxY / matrix.M22);
         }
 
+        public static Point TransformFromPixels(int pxX, int pxY)
+        {
+            System.Windows.Media.Matrix matrix = new HwndSource(new HwndSourceParameters()).CompositionTarget.TransformToDevice;
+            return new Point((int)(pxX / matrix.M11), (int)(pxY / matrix.M22));
+        }
+
+        public static Point TransformToPixels(int X, int Y)
+        {
+            System.Windows.Media.Matrix Matrix = new HwndSource(new HwndSourceParameters()).CompositionTarget.TransformToDevice;
+            return new Point((int)(X * Matrix.M11), (int)(Y * Matrix.M22));
+        }
+        public static void TransformToPixels(int X, int Y, out int pxX, out int pxY)
+        {
+            System.Windows.Media.Matrix Matrix = new HwndSource(new HwndSourceParameters()).CompositionTarget.TransformToDevice;
+            pxX = (int)(X * Matrix.M11);
+            pxY = (int)(Y * Matrix.M22);
+        }
+
+        [DllImport("user32.dll", EntryPoint = "GetWindowDC")]
+        public static extern IntPtr GetWindowDC(Int32 ptr);
+
+        public static Rectangle GetFullscreen()
+        {
+            int X = GetSystemMetrics(SystemMetricsFlags.SM_CXSCREEN);
+            int Y = GetSystemMetrics(SystemMetricsFlags.SM_CYSCREEN);
+            if (X % 10 == 0 && Y % 10 == 0)
+            {
+                return new Rectangle(0, 0, X, Y);
+            }
+            else
+            {
+                TransformToPixels(X, Y, out int x, out int y);
+                return new Rectangle(0, 0, x, y);
+            }
+       
+        }
+        //该函数将指定的消息发送到一个或多个窗口。此函数为指定的窗口调用窗口程序，直到窗口程序处理完消息再返回。
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, int wParam, int lParam);
 
@@ -65,6 +116,7 @@ namespace k_wallpaper
 
         public enum WindowLongFlags : int
         {
+            //窗口样式
             GWL_EXSTYLE = -20,
             GWLP_HINSTANCE = -6,
             GWLP_HWNDPARENT = -8,

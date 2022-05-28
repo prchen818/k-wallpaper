@@ -26,7 +26,7 @@ namespace k_wallpaper
         private void uiButton2_Click(object sender, EventArgs e)
         {
             wallpaper w = new wallpaper();
-            w.SetWallpaper(@"..\..\102.jpg");
+            w.SetWallpaper(@"..\..\Resources\snow.mp4");
         }
 
         private void uiButton3_Click(object sender, EventArgs e)
