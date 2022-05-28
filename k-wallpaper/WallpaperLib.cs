@@ -20,7 +20,7 @@ namespace k_wallpaper
             refresh();
         }
 
-        string storePath = @"Resources/";
+        string storePath = @"PictureLib/";
 
         private void importBtn_Click(object sender, EventArgs e)
         {
@@ -78,9 +78,8 @@ namespace k_wallpaper
         private void showDetails(object sender, EventArgs e)
         {
             PictureBox pic = (PictureBox)sender;
-            PSFunctionForm psfrom = new PSFunctionForm(pic.ImageLocation);
-            psfrom.Show();
+            details details = new details(pic.ImageLocation);
+            details.Show();
         }
-
     }
 }

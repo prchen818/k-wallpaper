@@ -55,11 +55,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="wallpaperimg.cs" />
-    <Compile Include="selfdesign.cs">
+    <Compile Include="details.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="selfdesign.Designer.cs">
-      <DependentUpon>selfdesign.cs</DependentUpon>
+    <Compile Include="details.Designer.cs">
+      <DependentUpon>details.cs</DependentUpon>
     </Compile>
     <Compile Include="instruction.cs">
       <SubType>Form</SubType>
@@ -91,8 +91,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="selfdesign.resx">
-      <DependentUpon>selfdesign.cs</DependentUpon>
+    <EmbeddedResource Include="details.resx">
+      <DependentUpon>details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="instruction.resx">
       <DependentUpon>instruction.cs</DependentUpon>
@@ -135,6 +135,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\102.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
