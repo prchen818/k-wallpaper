@@ -24,15 +24,15 @@ namespace k_wallpaper
         }
         public static wallpapercore GetWallpaperCore(wallpaper wallpaper)
         {
-            var extention = Path.GetExtension(@"..\..\102.jpg").ToLower();
+            var extention = Path.GetExtension(@"..\..\Resources\snow.mp4").ToLower();
             if (imgExtentions.Contains(extention))
             {
                 return new wallpaperimg(wallpaper);
             }
-            //else if (vedioExtentions.Contains(extention))
-           // {
-              //  return new wallpapervideo(wallpaper);
-           // }
+            else if (vedioExtentions.Contains(extention))
+            {
+               return new wallpapervideo(wallpaper);
+            }
            //
             else
             {
