@@ -18,6 +18,8 @@ namespace k_wallpaper
 
             public Rectangle Fullscreen { get; }
 
+            public string path;
+
             private string oldWallpaperFolder;
 
             private wallpapercore wallpaperCore;
@@ -82,8 +84,8 @@ namespace k_wallpaper
 
             public void SetWallpaper(string fullPath)
             {
-                
-                wallpaperCore = wallpapercore.GetWallpaperCore(this);
+            path = fullPath;
+                wallpapercore.GetWallpaperCore(this);
             }
         }
     }

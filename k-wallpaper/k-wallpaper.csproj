@@ -105,9 +105,6 @@
       <DependentUpon>details.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="wallpapervideo.cs" />
-    <EmbeddedResource Include="selfdesign.resx">
-      <DependentUpon>selfdesign.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="instruction.resx">
       <DependentUpon>instruction.cs</DependentUpon>
     </EmbeddedResource>

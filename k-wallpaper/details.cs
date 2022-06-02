@@ -30,5 +30,12 @@ namespace k_wallpaper
             PSFunctionForm ps = new PSFunctionForm(picbox.ImageLocation);
             ps.Show();
         }
+
+        private void setwallpaper_Click(object sender, EventArgs e)
+        {
+            wallpaper kw = new wallpaper();
+            kw.SetWallpaper(picbox.ImageLocation);
+            wallpapercore.GetWallpaperCore(kw);
+        }
     }
 }

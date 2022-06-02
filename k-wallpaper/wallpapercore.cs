@@ -11,6 +11,8 @@ namespace k_wallpaper
     {
         public wallpaper _wallpaper;
 
+        public string pathway;
+
         private static IEnumerable<string> imgExtentions = new string[] { ".jpg", ".bmp", ".png" ,".jpeg"};
 
         static IEnumerable<string> vedioExtentions = new string[] { ".mp4", ".mov", "avi", "mkv", "3gp", "wmv", "mpg" };
@@ -24,7 +26,7 @@ namespace k_wallpaper
         }
         public static wallpapercore GetWallpaperCore(wallpaper wallpaper)
         {
-            var extention = Path.GetExtension(@"..\..\Resources\snow.mp4").ToLower();
+            var extention = Path.GetExtension(wallpaper.path).ToLower();
             if (imgExtentions.Contains(extention))
             {
                 return new wallpaperimg(wallpaper);
