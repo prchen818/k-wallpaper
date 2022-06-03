@@ -99,6 +99,7 @@ namespace k_wallpaper
         {
             tipLabel.Text = "正在保存";
             bool isSave = true;
+            
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 //获取要保存的路径

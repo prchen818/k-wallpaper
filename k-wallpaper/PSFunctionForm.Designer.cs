@@ -62,7 +62,7 @@ namespace k_wallpaper
             this.mainPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mainPanel.BackgroundImage")));
             this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.mainPanel.Controls.Add(this.convertedPicture);
-            this.mainPanel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.mainPanel.Font = new System.Drawing.Font("微软雅黑", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.mainPanel.Location = new System.Drawing.Point(174, 66);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mainPanel.MinimumSize = new System.Drawing.Size(1, 1);
@@ -76,9 +76,9 @@ namespace k_wallpaper
             // 
             // convertedPicture
             // 
-            this.convertedPicture.Location = new System.Drawing.Point(188, 145);
+            this.convertedPicture.Location = new System.Drawing.Point(516, 268);
             this.convertedPicture.Name = "convertedPicture";
-            this.convertedPicture.Size = new System.Drawing.Size(943, 394);
+            this.convertedPicture.Size = new System.Drawing.Size(303, 182);
             this.convertedPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.convertedPicture.TabIndex = 0;
             this.convertedPicture.TabStop = false;
@@ -90,7 +90,7 @@ namespace k_wallpaper
             // 
             // originalPicture
             // 
-            this.originalPicture.Location = new System.Drawing.Point(3, 69);
+            this.originalPicture.Location = new System.Drawing.Point(19, 66);
             this.originalPicture.Name = "originalPicture";
             this.originalPicture.Size = new System.Drawing.Size(148, 103);
             this.originalPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -279,8 +279,8 @@ namespace k_wallpaper
             // 
             // tipLabel
             // 
-            this.tipLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tipLabel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tipLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(209)))), ((int)(((byte)(252)))));
+            this.tipLabel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tipLabel.Location = new System.Drawing.Point(19, 786);
             this.tipLabel.Name = "tipLabel";
             this.tipLabel.Size = new System.Drawing.Size(100, 23);
@@ -325,6 +325,7 @@ namespace k_wallpaper
             // PSFunctionForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(209)))), ((int)(((byte)(252)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1600, 900);
