@@ -68,6 +68,7 @@ namespace k_wallpaper
             this.mainPanel.MinimumSize = new System.Drawing.Size(1, 1);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1334, 732);
+            this.mainPanel.Style = Sunny.UI.UIStyle.Custom;
             this.mainPanel.TabIndex = 0;
             this.mainPanel.Text = "工作台";
             this.mainPanel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -104,6 +105,7 @@ namespace k_wallpaper
             this.darkCornerButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.darkCornerButton.Name = "darkCornerButton";
             this.darkCornerButton.Size = new System.Drawing.Size(100, 35);
+            this.darkCornerButton.Style = Sunny.UI.UIStyle.Custom;
             this.darkCornerButton.TabIndex = 2;
             this.darkCornerButton.Text = "暗角";
             this.darkCornerButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -118,6 +120,7 @@ namespace k_wallpaper
             this.brightnessButtonminus.MinimumSize = new System.Drawing.Size(1, 1);
             this.brightnessButtonminus.Name = "brightnessButtonminus";
             this.brightnessButtonminus.Size = new System.Drawing.Size(20, 35);
+            this.brightnessButtonminus.Style = Sunny.UI.UIStyle.Custom;
             this.brightnessButtonminus.TabIndex = 3;
             this.brightnessButtonminus.Text = "<";
             this.brightnessButtonminus.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -132,6 +135,7 @@ namespace k_wallpaper
             this.brightnessPlus.MinimumSize = new System.Drawing.Size(1, 1);
             this.brightnessPlus.Name = "brightnessPlus";
             this.brightnessPlus.Size = new System.Drawing.Size(20, 35);
+            this.brightnessPlus.Style = Sunny.UI.UIStyle.Custom;
             this.brightnessPlus.TabIndex = 4;
             this.brightnessPlus.Text = ">";
             this.brightnessPlus.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -146,6 +150,7 @@ namespace k_wallpaper
             this.fogButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.fogButton.Name = "fogButton";
             this.fogButton.Size = new System.Drawing.Size(100, 35);
+            this.fogButton.Style = Sunny.UI.UIStyle.Custom;
             this.fogButton.TabIndex = 5;
             this.fogButton.Text = "雾化";
             this.fogButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -160,6 +165,7 @@ namespace k_wallpaper
             this.reliefButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.reliefButton.Name = "reliefButton";
             this.reliefButton.Size = new System.Drawing.Size(100, 35);
+            this.reliefButton.Style = Sunny.UI.UIStyle.Custom;
             this.reliefButton.TabIndex = 6;
             this.reliefButton.Text = "浮雕";
             this.reliefButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -174,6 +180,7 @@ namespace k_wallpaper
             this.mosaicButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.mosaicButton.Name = "mosaicButton";
             this.mosaicButton.Size = new System.Drawing.Size(100, 35);
+            this.mosaicButton.Style = Sunny.UI.UIStyle.Custom;
             this.mosaicButton.TabIndex = 7;
             this.mosaicButton.Text = "马赛克";
             this.mosaicButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -188,6 +195,7 @@ namespace k_wallpaper
             this.darkButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.darkButton.Name = "darkButton";
             this.darkButton.Size = new System.Drawing.Size(100, 35);
+            this.darkButton.Style = Sunny.UI.UIStyle.Custom;
             this.darkButton.TabIndex = 8;
             this.darkButton.Text = "去色";
             this.darkButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -202,6 +210,7 @@ namespace k_wallpaper
             this.softButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.softButton.Name = "softButton";
             this.softButton.Size = new System.Drawing.Size(100, 35);
+            this.softButton.Style = Sunny.UI.UIStyle.Custom;
             this.softButton.TabIndex = 9;
             this.softButton.Text = "柔化";
             this.softButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -216,6 +225,7 @@ namespace k_wallpaper
             this.cutButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.cutButton.Name = "cutButton";
             this.cutButton.Size = new System.Drawing.Size(100, 35);
+            this.cutButton.Style = Sunny.UI.UIStyle.Custom;
             this.cutButton.TabIndex = 10;
             this.cutButton.Text = "剪裁";
             this.cutButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -230,6 +240,7 @@ namespace k_wallpaper
             this.centerButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.centerButton.Name = "centerButton";
             this.centerButton.Size = new System.Drawing.Size(100, 35);
+            this.centerButton.Style = Sunny.UI.UIStyle.Custom;
             this.centerButton.TabIndex = 11;
             this.centerButton.Text = "居中";
             this.centerButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -244,6 +255,7 @@ namespace k_wallpaper
             this.openButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.openButton.Name = "openButton";
             this.openButton.Size = new System.Drawing.Size(100, 35);
+            this.openButton.Style = Sunny.UI.UIStyle.Custom;
             this.openButton.TabIndex = 12;
             this.openButton.Text = "打开";
             this.openButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -258,6 +270,7 @@ namespace k_wallpaper
             this.saveButton.MinimumSize = new System.Drawing.Size(1, 1);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 35);
+            this.saveButton.Style = Sunny.UI.UIStyle.Custom;
             this.saveButton.TabIndex = 13;
             this.saveButton.Text = "保存";
             this.saveButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -271,6 +284,7 @@ namespace k_wallpaper
             this.tipLabel.Location = new System.Drawing.Point(19, 786);
             this.tipLabel.Name = "tipLabel";
             this.tipLabel.Size = new System.Drawing.Size(100, 23);
+            this.tipLabel.Style = Sunny.UI.UIStyle.Custom;
             this.tipLabel.TabIndex = 14;
             this.tipLabel.Text = "空闲中";
             this.tipLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -283,6 +297,7 @@ namespace k_wallpaper
             this.uiLabel2.Location = new System.Drawing.Point(14, 252);
             this.uiLabel2.Name = "uiLabel2";
             this.uiLabel2.Size = new System.Drawing.Size(53, 38);
+            this.uiLabel2.Style = Sunny.UI.UIStyle.Custom;
             this.uiLabel2.TabIndex = 15;
             this.uiLabel2.Text = "亮度";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -312,7 +327,7 @@ namespace k_wallpaper
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1920, 853);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.uiLabel2);
             this.Controls.Add(this.tipLabel);
