@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,10 +19,12 @@ namespace k_wallpaper
             InitializeComponent();
         }
 
+
         public details(string path)
         {
             InitializeComponent();
             picbox.ImageLocation = path;
+            picName.Text = Path.GetFileNameWithoutExtension(path);
         }
 
         private void Btn2PS_Click(object sender, EventArgs e)

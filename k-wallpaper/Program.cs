@@ -16,7 +16,7 @@ namespace k_wallpaper
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PSFunctionForm());
+            Application.Run(new Mainform());
         }
     }
 }

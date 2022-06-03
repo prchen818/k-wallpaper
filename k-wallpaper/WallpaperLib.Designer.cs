@@ -57,7 +57,7 @@
             this.uiMarkLabel1.MarkPos = Sunny.UI.UIMarkLabel.UIMarkPos.Bottom;
             this.uiMarkLabel1.Name = "uiMarkLabel1";
             this.uiMarkLabel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.uiMarkLabel1.Size = new System.Drawing.Size(100, 23);
+            this.uiMarkLabel1.Size = new System.Drawing.Size(92, 32);
             this.uiMarkLabel1.TabIndex = 2;
             this.uiMarkLabel1.Text = "本地壁纸";
             this.uiMarkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
