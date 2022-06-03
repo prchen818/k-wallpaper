@@ -24,7 +24,7 @@ namespace k_wallpaper
                     Width = x,
                     Height = y,
                     Stretch = Stretch.Fill,
-                    Source = new Uri(@"E:\KW\k-wallpaper\k-wallpaper\Resources\snow.mp4")
+                    Source = new Uri(wallpaper.path)
                 };
 
                 Media.MediaEnded += ((s, e) =>
