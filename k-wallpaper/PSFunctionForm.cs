@@ -49,8 +49,8 @@ namespace k_wallpaper
             picPath = path;
             bitmap = (Bitmap)Image.FromFile(path);
             originalBitmap = bitmap;
-           //每打开图片，picturebox状态要复原，防止因为剪裁收到影响
-           convertedPicture.Width = bitmap.Width;
+            //每打开图片，picturebox状态要复原，防止因为剪裁收到影响
+            convertedPicture.Width = bitmap.Width;
             convertedPicture.Height = bitmap.Height;
             convertedPicture.Location = new Point((panelCenterX - bitmap.Width / 2), (panelCenterY - bitmap.Height / 2));
             originalPicture.Image = bitmap.Clone() as Image;
