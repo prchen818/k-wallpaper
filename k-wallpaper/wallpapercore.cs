@@ -9,7 +9,7 @@ namespace k_wallpaper
 {
     public abstract class wallpapercore
     {
-        public static wallpaper _wallpaper;
+        public static  wallpaper _wallpaper;
 
        // public string pathway;
 
@@ -26,7 +26,7 @@ namespace k_wallpaper
         }
         public static void Close()
         {
-            _wallpaper.Close();
+       
         }
         public static wallpapercore GetWallpaperCore(wallpaper wallpaper)
         {

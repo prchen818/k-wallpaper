@@ -55,7 +55,7 @@ namespace k_wallpaper
                 if (Window != null)
                 {
                     Window.Close();
-                   // Window = null;
+                    Window = null;
                 }
             }
 
@@ -84,7 +84,7 @@ namespace k_wallpaper
 
             public void SetWallpaper(string fullPath)
             {
-            path = fullPath;
+                path = fullPath;
                 wallpapercore.GetWallpaperCore(this);
             }
         }

@@ -10,9 +10,11 @@ using System.Windows.Forms;
 using Sunny.UI;
 using System.Diagnostics;
 using k_wallpaper.Properties;
+using System.Windows;
 
 namespace k_wallpaper
 {
+   
     public partial class Mainform : UIForm
     {
         public Mainform()
@@ -74,8 +76,9 @@ namespace k_wallpaper
 
         private void Btn_exit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
             wallpapercore.Close();
+            Environment.Exit(0);
+
         }
     }
 }
