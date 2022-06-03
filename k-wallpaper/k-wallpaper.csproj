@@ -64,6 +64,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NetSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NetSearch.Designer.cs">
+      <DependentUpon>NetSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="wallpaperimg.cs" />
     <Compile Include="details.cs">
       <SubType>Form</SubType>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mainform.resx">
       <DependentUpon>Mainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NetSearch.resx">
+      <DependentUpon>NetSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

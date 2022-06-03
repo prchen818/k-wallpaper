@@ -83,9 +83,9 @@ namespace k_wallpaper
             details.Show();
         }
 
-        private void uiButton2_Click(object sender, EventArgs e)
+        private void search_Btn_Click(object sender, EventArgs e)
         {
-
+            new NetSearch().Show();
         }
     }
 }
