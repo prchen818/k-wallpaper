@@ -22,8 +22,8 @@ namespace k_wallpaper
         {
             if (wd.Text != "")
             {
-
-                webBrowser.Navigate("https://image.baidu.com/search/index?tn=baiduimage&word=" + wd.Text + "&width=1920&height=1080");
+                string url = "https://cn.bing.com/images/search?q=" + wd.Text + "&qft=+filterui:imagesize-custom_1920_1080";
+                webBrowser.Navigate(url);
                 webBrowser.Visible = true;
                 wd.Visible = false;
                 Btn.Visible = false;
