@@ -327,7 +327,7 @@ namespace k_wallpaper
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.uiLabel2);
             this.Controls.Add(this.tipLabel);
@@ -350,7 +350,6 @@ namespace k_wallpaper
             this.Text = "图片工作坊";
             this.TitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.TitleForeColor = System.Drawing.Color.DarkSlateGray;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ZoomScaleRect = new System.Drawing.Rectangle(19, 19, 1920, 1020);
             this.mainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.convertedPicture)).EndInit();
