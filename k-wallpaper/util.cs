@@ -43,11 +43,6 @@ namespace k_wallpaper
         [DllImport("user32.dll")]
         public static extern bool EnumWindows(EnumWindowsProc proc, IntPtr lParam);
 
-/*        internal static void SetWindowPos(IntPtr wallpaperHandle, IntPtr zero, int v1, int v2, int width, int height, System.Range range)
-        {
-            throw new NotImplementedException();
-        }
-*/
         public delegate bool EnumWindowsProc(IntPtr hwnd, IntPtr lParam);
 
         [DllImport("user32.dll")]
@@ -70,17 +65,11 @@ namespace k_wallpaper
             Y = (int)(pxY / matrix.M22);
         }
 
-        public static Point TransformFromPixels(int pxX, int pxY)
-        {
-            System.Windows.Media.Matrix matrix = new HwndSource(new HwndSourceParameters()).CompositionTarget.TransformToDevice;
-            return new Point((int)(pxX / matrix.M11), (int)(pxY / matrix.M22));
-        }
-
-        public static Point TransformToPixels(int X, int Y)
+    /*    public static Point TransformToPixels(int X, int Y)
         {
             System.Windows.Media.Matrix Matrix = new HwndSource(new HwndSourceParameters()).CompositionTarget.TransformToDevice;
             return new Point((int)(X * Matrix.M11), (int)(Y * Matrix.M22));
-        }
+        }*/
         public static void TransformToPixels(int X, int Y, out int pxX, out int pxY)
         {
             System.Windows.Media.Matrix Matrix = new HwndSource(new HwndSourceParameters()).CompositionTarget.TransformToDevice;
@@ -88,8 +77,8 @@ namespace k_wallpaper
             pxY = (int)(Y * Matrix.M22);
         }
 
-        [DllImport("user32.dll", EntryPoint = "GetWindowDC")]
-        public static extern IntPtr GetWindowDC(Int32 ptr);
+     /*   [DllImport("user32.dll", EntryPoint = "GetWindowDC")]
+        public static extern IntPtr GetWindowDC(Int32 ptr);*/
 
         public static Rectangle GetFullscreen()
         {
@@ -208,6 +197,7 @@ namespace k_wallpaper
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
+        //修改窗口大小尺寸
         public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, SetWindowPosFlags uFlags);
 
         public enum WindowStylesEx : uint
@@ -347,6 +337,34 @@ namespace k_wallpaper
             /// </summary>
             WS_EX_WINDOWEDGE = 0x00000100
         }
+        public class StartException : Exception
+        {
+            /// <summary>
+            /// 导致异常的函数名
+            /// </summary>
+            public string Function { get; set; }
 
+            public StartException()
+            {
+            }
+
+            public StartException(string message, string function) : base(message)
+            {
+                Function = function;
+            }
+
+            public StartException(string message) : base(message)
+            {
+            }
+
+            public StartException(string message, Exception innerException) : base(message, innerException)
+            {
+            }
+
+            protected StartException(SerializationInfo info, StreamingContext context) : base(info, context)
+            {
+            }
+        }
+       
     }
 }

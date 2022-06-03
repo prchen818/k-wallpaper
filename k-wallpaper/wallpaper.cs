@@ -55,7 +55,7 @@ namespace k_wallpaper
                 if (Window != null)
                 {
                     Window.Close();
-                    Window = null;
+                   // Window = null;
                 }
             }
 
@@ -74,12 +74,12 @@ namespace k_wallpaper
                 }
                 catch (FileNotFoundException exception)
                 {
-                  
-                }
+                MessageBox.Show($"{exception.Data.ToString()}\n{exception.Message}\n{exception.Source}\n{exception.StackTrace}\n{exception.TargetSite}\n很抱歉, 我们未能找到您原来的壁纸, 请手动恢复");
+            }
                 catch (Exception exception)
                 {
-                   
-                }
+                MessageBox.Show($"{exception.Data.ToString()}\n{exception.Message}\n{exception.Source}\n{exception.StackTrace}\n{exception.TargetSite}\n很抱歉,在应用原壁纸时出现异常!");
+            }
             }
 
             public void SetWallpaper(string fullPath)

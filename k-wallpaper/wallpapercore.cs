@@ -9,9 +9,9 @@ namespace k_wallpaper
 {
     public abstract class wallpapercore
     {
-        public wallpaper _wallpaper;
+        public static wallpaper _wallpaper;
 
-        public string pathway;
+       // public string pathway;
 
         private static IEnumerable<string> imgExtentions = new string[] { ".jpg", ".bmp", ".png" ,".jpeg"};
 
@@ -23,6 +23,10 @@ namespace k_wallpaper
         public wallpapercore(wallpaper wallpaper)
         {
             _wallpaper = wallpaper;
+        }
+        public static void Close()
+        {
+            _wallpaper.Close();
         }
         public static wallpapercore GetWallpaperCore(wallpaper wallpaper)
         {
