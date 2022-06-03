@@ -31,7 +31,7 @@ namespace k_wallpaper
         {
             this.uiButton1 = new Sunny.UI.UIButton();
             this.uiLabel4 = new Sunny.UI.UILabel();
-            this.uiButton2 = new Sunny.UI.UIButton();
+            this.setwallpaper = new Sunny.UI.UIButton();
             this.Btn2PS = new Sunny.UI.UIButton();
             this.Btn_rename = new Sunny.UI.UIButton();
             this.picName = new Sunny.UI.UIMarkLabel();
@@ -63,18 +63,19 @@ namespace k_wallpaper
             this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiLabel4.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
-            // uiButton2
+            // setwallpaper
             // 
-            this.uiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton2.Location = new System.Drawing.Point(768, 658);
-            this.uiButton2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton2.Name = "uiButton2";
-            this.uiButton2.Size = new System.Drawing.Size(119, 32);
-            this.uiButton2.TabIndex = 8;
-            this.uiButton2.Text = "设置为壁纸";
-            this.uiButton2.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.setwallpaper.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.setwallpaper.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.setwallpaper.Location = new System.Drawing.Point(840, 658);
+            this.setwallpaper.MinimumSize = new System.Drawing.Size(1, 1);
+            this.setwallpaper.Name = "setwallpaper";
+            this.setwallpaper.Size = new System.Drawing.Size(83, 32);
+            this.setwallpaper.TabIndex = 8;
+            this.setwallpaper.Text = "设置为壁纸";
+            this.setwallpaper.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.setwallpaper.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.setwallpaper.Click += new System.EventHandler(this.setwallpaper_Click);
             // 
             // Btn2PS
             // 
@@ -135,7 +136,7 @@ namespace k_wallpaper
             this.Controls.Add(this.picName);
             this.Controls.Add(this.Btn_rename);
             this.Controls.Add(this.Btn2PS);
-            this.Controls.Add(this.uiButton2);
+            this.Controls.Add(this.setwallpaper);
             this.Controls.Add(this.uiLabel4);
             this.Controls.Add(this.uiButton1);
             this.Name = "details";
@@ -151,7 +152,7 @@ namespace k_wallpaper
 
         private Sunny.UI.UIButton uiButton1;
         private Sunny.UI.UILabel uiLabel4;
-        private Sunny.UI.UIButton uiButton2;
+        private Sunny.UI.UIButton setwallpaper;
         private Sunny.UI.UIButton Btn2PS;
         private Sunny.UI.UIButton Btn_rename;
         private Sunny.UI.UIMarkLabel picName;

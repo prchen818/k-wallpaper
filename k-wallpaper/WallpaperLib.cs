@@ -27,6 +27,7 @@ namespace k_wallpaper
             try
             {
                 ofd.Title = "导入壁纸库";
+                //此处之后的后缀还需要修改
                 ofd.Filter = "JPEG|*.jpg;*.jpeg|MP4|*.mp4|PNG|*.png|GIF|*.gif";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
@@ -80,6 +81,11 @@ namespace k_wallpaper
             PictureBox pic = (PictureBox)sender;
             details details = new details(pic.ImageLocation);
             details.Show();
+        }
+
+        private void uiButton2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
