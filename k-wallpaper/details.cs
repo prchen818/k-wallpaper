@@ -40,5 +40,56 @@ namespace k_wallpaper
             kw.SetWallpaper(picbox.ImageLocation);
             wallpapercore.GetWallpaperCore(kw);
         }
+
+        private void Btn_rename_Click(object sender, EventArgs e)
+        {
+            renameText.Visible = true;
+            renameText.Focus();
+        }
+
+
+
+        private void Rename()
+        {
+            picName.Visible = false;
+            string srcPath = picbox.ImageLocation;
+            string dicPath = Path.GetDirectoryName(srcPath);
+            string extension = Path.GetExtension(srcPath);
+            if (renameText.Text != "" || renameText.Text != null)
+            {
+                string desPath = dicPath + "/" + renameText.Text  + extension;
+                if (File.Exists(desPath))
+                {
+                    MessageBox.Show("重复命名！请重新输入！");
+                }
+                else
+                {
+                    try
+                    {
+                        File.Move(srcPath, desPath);
+                        picName.Text = renameText.Text;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("输入不能为空！");
+            }
+
+            picName.Visible = true;
+            renameText.Visible = false;
+        }
+
+        private void renameText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+                Rename();
+            }
+        }
     }
 }
