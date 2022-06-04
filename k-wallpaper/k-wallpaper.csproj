@@ -77,6 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NetSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AddNote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,9 +107,6 @@
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="wallpaperimg.cs" />
-    <Compile Include="selfdesign.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="NetSearch.Designer.cs">
       <DependentUpon>NetSearch.cs</DependentUpon>
     </Compile>
@@ -150,6 +149,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="details.resx">
       <DependentUpon>details.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddNote.resx">
       <DependentUpon>AddNote.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,9 +161,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NoteMain.resx">
       <DependentUpon>NoteMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="selfdesign.resx">
-      <DependentUpon>selfdesign.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="wallpapervideo.cs" />
     <EmbeddedResource Include="instruction.resx">
