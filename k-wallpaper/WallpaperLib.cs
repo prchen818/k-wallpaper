@@ -20,13 +20,14 @@ namespace k_wallpaper
             refresh();
         }
 
-        string storePath = @"Resources/";
+        string storePath = @"PictureLib/";
 
         private void importBtn_Click(object sender, EventArgs e)
         {
             try
             {
                 ofd.Title = "导入壁纸库";
+                //此处之后的后缀还需要修改
                 ofd.Filter = "JPEG|*.jpg;*.jpeg|MP4|*.mp4|PNG|*.png|GIF|*.gif";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
@@ -78,9 +79,13 @@ namespace k_wallpaper
         private void showDetails(object sender, EventArgs e)
         {
             PictureBox pic = (PictureBox)sender;
-            PSFunctionForm psfrom = new PSFunctionForm(pic.ImageLocation);
-            psfrom.Show();
+            details details = new details(pic.ImageLocation);
+            details.Show();
         }
 
+        private void search_Btn_Click(object sender, EventArgs e)
+        {
+            new NetSearch().Show();
+        }
     }
 }

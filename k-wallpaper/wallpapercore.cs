@@ -9,7 +9,9 @@ namespace k_wallpaper
 {
     public abstract class wallpapercore
     {
-        public wallpaper _wallpaper;
+        public static  wallpaper _wallpaper;
+
+       // public string pathway;
 
         private static IEnumerable<string> imgExtentions = new string[] { ".jpg", ".bmp", ".png" ,".jpeg"};
 
@@ -22,17 +24,21 @@ namespace k_wallpaper
         {
             _wallpaper = wallpaper;
         }
+        public static void Close()
+        {
+       
+        }
         public static wallpapercore GetWallpaperCore(wallpaper wallpaper)
         {
-            var extention = Path.GetExtension(@"..\..\102.jpg").ToLower();
+            var extention = Path.GetExtension(wallpaper.path).ToLower();
             if (imgExtentions.Contains(extention))
             {
                 return new wallpaperimg(wallpaper);
             }
-            //else if (vedioExtentions.Contains(extention))
-           // {
-              //  return new wallpapervideo(wallpaper);
-           // }
+            else if (vedioExtentions.Contains(extention))
+            {
+               return new wallpapervideo(wallpaper);
+            }
            //
             else
             {

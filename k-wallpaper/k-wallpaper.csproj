@@ -32,7 +32,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
+    <Reference Include="PresentationBuildTasks" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
       <HintPath>packages\AWSSDK.Core.3.7.11.11\lib\net45\AWSSDK.Core.dll</HintPath>
     </Reference>
@@ -47,10 +57,13 @@
       <HintPath>packages\SunnyUI.Common.3.1.2\lib\net472\SunnyUI.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities.Core.Presentation" />
+    <Reference Include="System.Activities.Presentation" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Presentation" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,8 +73,10 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NetSearch.cs">
     <Compile Include="AddNote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,8 +108,15 @@
     <Compile Include="selfdesign.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="selfdesign.Designer.cs">
-      <DependentUpon>selfdesign.cs</DependentUpon>
+    <Compile Include="NetSearch.Designer.cs">
+      <DependentUpon>NetSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="wallpaperimg.cs" />
+    <Compile Include="details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="details.Designer.cs">
+      <DependentUpon>details.cs</DependentUpon>
     </Compile>
     <Compile Include="instruction.cs">
       <SubType>Form</SubType>
@@ -126,6 +148,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="details.resx">
+      <DependentUpon>details.cs</DependentUpon>
     <EmbeddedResource Include="AddNote.resx">
       <DependentUpon>AddNote.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,11 +165,15 @@
     <EmbeddedResource Include="selfdesign.resx">
       <DependentUpon>selfdesign.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="wallpapervideo.cs" />
     <EmbeddedResource Include="instruction.resx">
       <DependentUpon>instruction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mainform.resx">
       <DependentUpon>Mainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NetSearch.resx">
+      <DependentUpon>NetSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -184,6 +212,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\102.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

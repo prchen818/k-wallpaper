@@ -29,285 +29,357 @@ namespace k_wallpaper
         /// </summary>
         private void InitializeComponent()
         {
-            this.uiPanel1 = new Sunny.UI.UIPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.uiButton1 = new Sunny.UI.UIButton();
-            this.uiButton2 = new Sunny.UI.UIButton();
-            this.uiButton3 = new Sunny.UI.UIButton();
-            this.uiButton4 = new Sunny.UI.UIButton();
-            this.uiButton5 = new Sunny.UI.UIButton();
-            this.uiButton6 = new Sunny.UI.UIButton();
-            this.uiButton7 = new Sunny.UI.UIButton();
-            this.uiButton8 = new Sunny.UI.UIButton();
-            this.uiButton9 = new Sunny.UI.UIButton();
-            this.uiButton10 = new Sunny.UI.UIButton();
-            this.uiButton11 = new Sunny.UI.UIButton();
-            this.uiButton12 = new Sunny.UI.UIButton();
-            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PSFunctionForm));
+            this.mainPanel = new Sunny.UI.UIPanel();
+            this.convertedPicture = new System.Windows.Forms.PictureBox();
+            this.originalPicture = new System.Windows.Forms.PictureBox();
+            this.darkCornerButton = new Sunny.UI.UIButton();
+            this.brightnessButtonminus = new Sunny.UI.UIButton();
+            this.brightnessPlus = new Sunny.UI.UIButton();
+            this.fogButton = new Sunny.UI.UIButton();
+            this.reliefButton = new Sunny.UI.UIButton();
+            this.mosaicButton = new Sunny.UI.UIButton();
+            this.darkButton = new Sunny.UI.UIButton();
+            this.softButton = new Sunny.UI.UIButton();
+            this.cutButton = new Sunny.UI.UIButton();
+            this.centerButton = new Sunny.UI.UIButton();
+            this.openButton = new Sunny.UI.UIButton();
+            this.saveButton = new Sunny.UI.UIButton();
+            this.tipLabel = new Sunny.UI.UILabel();
             this.uiLabel2 = new Sunny.UI.UILabel();
-            this.uiPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.clearButton = new Sunny.UI.UIButton();
+            this.mainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.convertedPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.originalPicture)).BeginInit();
             this.SuspendLayout();
             // 
-            // uiPanel1
+            // mainPanel
             // 
-            this.uiPanel1.Controls.Add(this.pictureBox2);
-            this.uiPanel1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiPanel1.Location = new System.Drawing.Point(174, 66);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.Size = new System.Drawing.Size(1334, 732);
-            this.uiPanel1.TabIndex = 0;
-            this.uiPanel1.Text = "uiPanel1";
-            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.uiPanel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.mainPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mainPanel.BackgroundImage")));
+            this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mainPanel.Controls.Add(this.convertedPicture);
+            this.mainPanel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.mainPanel.Location = new System.Drawing.Point(174, 66);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mainPanel.MinimumSize = new System.Drawing.Size(1, 1);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1334, 732);
+            this.mainPanel.Style = Sunny.UI.UIStyle.Custom;
+            this.mainPanel.TabIndex = 0;
+            this.mainPanel.Text = "工作台";
+            this.mainPanel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mainPanel.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
-            // pictureBox2
+            // convertedPicture
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(623, 343);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.convertedPicture.Location = new System.Drawing.Point(188, 145);
+            this.convertedPicture.Name = "convertedPicture";
+            this.convertedPicture.Size = new System.Drawing.Size(943, 394);
+            this.convertedPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.convertedPicture.TabIndex = 0;
+            this.convertedPicture.TabStop = false;
+            this.convertedPicture.Paint += new System.Windows.Forms.PaintEventHandler(this.convertedPicture_Paint);
+            this.convertedPicture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.convertedPicture_MouseDown);
+            this.convertedPicture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.convertedPicture_MouseMove);
+            this.convertedPicture.MouseUp += new System.Windows.Forms.MouseEventHandler(this.convertedPicture_MouseUp);
+            this.convertedPicture.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.convertedPicture_MouseWheel);
             // 
-            // pictureBox1
+            // originalPicture
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(19, 66);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 103);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.originalPicture.Location = new System.Drawing.Point(3, 69);
+            this.originalPicture.Name = "originalPicture";
+            this.originalPicture.Size = new System.Drawing.Size(148, 103);
+            this.originalPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.originalPicture.TabIndex = 1;
+            this.originalPicture.TabStop = false;
             // 
-            // uiButton1
+            // darkCornerButton
             // 
-            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.Location = new System.Drawing.Point(19, 211);
-            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(100, 35);
-            this.uiButton1.TabIndex = 2;
-            this.uiButton1.Text = "暗角";
-            this.uiButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.darkCornerButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.darkCornerButton.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.darkCornerButton.Location = new System.Drawing.Point(19, 211);
+            this.darkCornerButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.darkCornerButton.Name = "darkCornerButton";
+            this.darkCornerButton.Size = new System.Drawing.Size(100, 35);
+            this.darkCornerButton.Style = Sunny.UI.UIStyle.Custom;
+            this.darkCornerButton.TabIndex = 2;
+            this.darkCornerButton.Text = "暗角";
+            this.darkCornerButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.darkCornerButton.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.darkCornerButton.Click += new System.EventHandler(this.darkCornerButton_Click);
             // 
-            // uiButton2
+            // brightnessButtonminus
             // 
-            this.uiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton2.Location = new System.Drawing.Point(73, 252);
-            this.uiButton2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton2.Name = "uiButton2";
-            this.uiButton2.Size = new System.Drawing.Size(20, 35);
-            this.uiButton2.TabIndex = 3;
-            this.uiButton2.Text = "<";
-            this.uiButton2.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.brightnessButtonminus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.brightnessButtonminus.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.brightnessButtonminus.Location = new System.Drawing.Point(73, 252);
+            this.brightnessButtonminus.MinimumSize = new System.Drawing.Size(1, 1);
+            this.brightnessButtonminus.Name = "brightnessButtonminus";
+            this.brightnessButtonminus.Size = new System.Drawing.Size(20, 35);
+            this.brightnessButtonminus.Style = Sunny.UI.UIStyle.Custom;
+            this.brightnessButtonminus.TabIndex = 3;
+            this.brightnessButtonminus.Text = "<";
+            this.brightnessButtonminus.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.brightnessButtonminus.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.brightnessButtonminus.Click += new System.EventHandler(this.brightnessButtonminus_Click);
             // 
-            // uiButton3
+            // brightnessPlus
             // 
-            this.uiButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton3.Location = new System.Drawing.Point(99, 252);
-            this.uiButton3.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton3.Name = "uiButton3";
-            this.uiButton3.Size = new System.Drawing.Size(20, 35);
-            this.uiButton3.TabIndex = 4;
-            this.uiButton3.Text = ">";
-            this.uiButton3.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton3.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.brightnessPlus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.brightnessPlus.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.brightnessPlus.Location = new System.Drawing.Point(99, 252);
+            this.brightnessPlus.MinimumSize = new System.Drawing.Size(1, 1);
+            this.brightnessPlus.Name = "brightnessPlus";
+            this.brightnessPlus.Size = new System.Drawing.Size(20, 35);
+            this.brightnessPlus.Style = Sunny.UI.UIStyle.Custom;
+            this.brightnessPlus.TabIndex = 4;
+            this.brightnessPlus.Text = ">";
+            this.brightnessPlus.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.brightnessPlus.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.brightnessPlus.Click += new System.EventHandler(this.brightnessPlus_Click);
             // 
-            // uiButton4
+            // fogButton
             // 
-            this.uiButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton4.Location = new System.Drawing.Point(19, 293);
-            this.uiButton4.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton4.Name = "uiButton4";
-            this.uiButton4.Size = new System.Drawing.Size(100, 35);
-            this.uiButton4.TabIndex = 5;
-            this.uiButton4.Text = "雾化";
-            this.uiButton4.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton4.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.fogButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fogButton.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.fogButton.Location = new System.Drawing.Point(19, 293);
+            this.fogButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.fogButton.Name = "fogButton";
+            this.fogButton.Size = new System.Drawing.Size(100, 35);
+            this.fogButton.Style = Sunny.UI.UIStyle.Custom;
+            this.fogButton.TabIndex = 5;
+            this.fogButton.Text = "雾化";
+            this.fogButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.fogButton.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.fogButton.Click += new System.EventHandler(this.fogButton_Click);
             // 
-            // uiButton5
+            // reliefButton
             // 
-            this.uiButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton5.Location = new System.Drawing.Point(19, 334);
-            this.uiButton5.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton5.Name = "uiButton5";
-            this.uiButton5.Size = new System.Drawing.Size(100, 35);
-            this.uiButton5.TabIndex = 6;
-            this.uiButton5.Text = "浮雕";
-            this.uiButton5.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton5.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.reliefButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reliefButton.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.reliefButton.Location = new System.Drawing.Point(19, 334);
+            this.reliefButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.reliefButton.Name = "reliefButton";
+            this.reliefButton.Size = new System.Drawing.Size(100, 35);
+            this.reliefButton.Style = Sunny.UI.UIStyle.Custom;
+            this.reliefButton.TabIndex = 6;
+            this.reliefButton.Text = "浮雕";
+            this.reliefButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.reliefButton.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.reliefButton.Click += new System.EventHandler(this.reliefButton_Click);
             // 
-            // uiButton6
+            // mosaicButton
             // 
-            this.uiButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton6.Location = new System.Drawing.Point(19, 375);
-            this.uiButton6.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton6.Name = "uiButton6";
-            this.uiButton6.Size = new System.Drawing.Size(100, 35);
-            this.uiButton6.TabIndex = 7;
-            this.uiButton6.Text = "马赛克";
-            this.uiButton6.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton6.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.mosaicButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mosaicButton.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.mosaicButton.Location = new System.Drawing.Point(19, 375);
+            this.mosaicButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.mosaicButton.Name = "mosaicButton";
+            this.mosaicButton.Size = new System.Drawing.Size(100, 35);
+            this.mosaicButton.Style = Sunny.UI.UIStyle.Custom;
+            this.mosaicButton.TabIndex = 7;
+            this.mosaicButton.Text = "马赛克";
+            this.mosaicButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.mosaicButton.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.mosaicButton.Click += new System.EventHandler(this.mosaicButton_Click);
             // 
-            // uiButton7
+            // darkButton
             // 
-            this.uiButton7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton7.Location = new System.Drawing.Point(19, 416);
-            this.uiButton7.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton7.Name = "uiButton7";
-            this.uiButton7.Size = new System.Drawing.Size(100, 35);
-            this.uiButton7.TabIndex = 8;
-            this.uiButton7.Text = "去色";
-            this.uiButton7.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton7.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.darkButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.darkButton.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.darkButton.Location = new System.Drawing.Point(19, 416);
+            this.darkButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.darkButton.Name = "darkButton";
+            this.darkButton.Size = new System.Drawing.Size(100, 35);
+            this.darkButton.Style = Sunny.UI.UIStyle.Custom;
+            this.darkButton.TabIndex = 8;
+            this.darkButton.Text = "去色";
+            this.darkButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.darkButton.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.darkButton.Click += new System.EventHandler(this.darkButton_Click);
             // 
-            // uiButton8
+            // softButton
             // 
-            this.uiButton8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton8.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton8.Location = new System.Drawing.Point(19, 457);
-            this.uiButton8.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton8.Name = "uiButton8";
-            this.uiButton8.Size = new System.Drawing.Size(100, 35);
-            this.uiButton8.TabIndex = 9;
-            this.uiButton8.Text = "柔化";
-            this.uiButton8.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton8.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.softButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.softButton.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.softButton.Location = new System.Drawing.Point(19, 457);
+            this.softButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.softButton.Name = "softButton";
+            this.softButton.Size = new System.Drawing.Size(100, 35);
+            this.softButton.Style = Sunny.UI.UIStyle.Custom;
+            this.softButton.TabIndex = 9;
+            this.softButton.Text = "柔化";
+            this.softButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.softButton.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.softButton.Click += new System.EventHandler(this.softButton_Click);
             // 
-            // uiButton9
+            // cutButton
             // 
-            this.uiButton9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton9.Location = new System.Drawing.Point(19, 550);
-            this.uiButton9.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton9.Name = "uiButton9";
-            this.uiButton9.Size = new System.Drawing.Size(100, 35);
-            this.uiButton9.TabIndex = 10;
-            this.uiButton9.Text = "剪裁";
-            this.uiButton9.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton9.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.cutButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cutButton.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cutButton.Location = new System.Drawing.Point(19, 534);
+            this.cutButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.cutButton.Name = "cutButton";
+            this.cutButton.Size = new System.Drawing.Size(100, 35);
+            this.cutButton.Style = Sunny.UI.UIStyle.Custom;
+            this.cutButton.TabIndex = 10;
+            this.cutButton.Text = "剪裁";
+            this.cutButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cutButton.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.cutButton.Click += new System.EventHandler(this.cutButton_Click);
             // 
-            // uiButton10
+            // centerButton
             // 
-            this.uiButton10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton10.Location = new System.Drawing.Point(19, 591);
-            this.uiButton10.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton10.Name = "uiButton10";
-            this.uiButton10.Size = new System.Drawing.Size(100, 35);
-            this.uiButton10.TabIndex = 11;
-            this.uiButton10.Text = "居中";
-            this.uiButton10.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton10.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.centerButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.centerButton.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.centerButton.Location = new System.Drawing.Point(19, 575);
+            this.centerButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.centerButton.Name = "centerButton";
+            this.centerButton.Size = new System.Drawing.Size(100, 35);
+            this.centerButton.Style = Sunny.UI.UIStyle.Custom;
+            this.centerButton.TabIndex = 11;
+            this.centerButton.Text = "居中";
+            this.centerButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.centerButton.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.centerButton.Click += new System.EventHandler(this.centerButton_Click);
             // 
-            // uiButton11
+            // openButton
             // 
-            this.uiButton11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton11.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton11.Location = new System.Drawing.Point(19, 660);
-            this.uiButton11.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton11.Name = "uiButton11";
-            this.uiButton11.Size = new System.Drawing.Size(100, 35);
-            this.uiButton11.TabIndex = 12;
-            this.uiButton11.Text = "打开";
-            this.uiButton11.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton11.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.openButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.openButton.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.openButton.Location = new System.Drawing.Point(19, 685);
+            this.openButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.openButton.Name = "openButton";
+            this.openButton.Size = new System.Drawing.Size(100, 35);
+            this.openButton.Style = Sunny.UI.UIStyle.Custom;
+            this.openButton.TabIndex = 12;
+            this.openButton.Text = "打开";
+            this.openButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.openButton.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.openButton.Click += new System.EventHandler(this.openButton_Click);
             // 
-            // uiButton12
+            // saveButton
             // 
-            this.uiButton12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton12.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton12.Location = new System.Drawing.Point(19, 701);
-            this.uiButton12.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton12.Name = "uiButton12";
-            this.uiButton12.Size = new System.Drawing.Size(100, 35);
-            this.uiButton12.TabIndex = 13;
-            this.uiButton12.Text = "保存";
-            this.uiButton12.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton12.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.saveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveButton.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.saveButton.Location = new System.Drawing.Point(19, 726);
+            this.saveButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(100, 35);
+            this.saveButton.Style = Sunny.UI.UIStyle.Custom;
+            this.saveButton.TabIndex = 13;
+            this.saveButton.Text = "保存";
+            this.saveButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.saveButton.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // uiLabel1
+            // tipLabel
             // 
-            this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel1.Location = new System.Drawing.Point(19, 785);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(100, 23);
-            this.uiLabel1.TabIndex = 14;
-            this.uiLabel1.Text = "uiLabel1";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiLabel1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.tipLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tipLabel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tipLabel.Location = new System.Drawing.Point(19, 786);
+            this.tipLabel.Name = "tipLabel";
+            this.tipLabel.Size = new System.Drawing.Size(100, 23);
+            this.tipLabel.Style = Sunny.UI.UIStyle.Custom;
+            this.tipLabel.TabIndex = 14;
+            this.tipLabel.Text = "空闲中";
+            this.tipLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tipLabel.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
             // uiLabel2
             // 
+            this.uiLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.uiLabel2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel2.Location = new System.Drawing.Point(19, 264);
+            this.uiLabel2.Location = new System.Drawing.Point(14, 252);
             this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(38, 23);
+            this.uiLabel2.Size = new System.Drawing.Size(53, 38);
+            this.uiLabel2.Style = Sunny.UI.UIStyle.Custom;
             this.uiLabel2.TabIndex = 15;
-            this.uiLabel2.Text = "uiLabel2";
+            this.uiLabel2.Text = "亮度";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiLabel2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // clearButton
+            // 
+            this.clearButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearButton.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.clearButton.Location = new System.Drawing.Point(19, 644);
+            this.clearButton.MinimumSize = new System.Drawing.Size(1, 1);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(100, 35);
+            this.clearButton.Style = Sunny.UI.UIStyle.Custom;
+            this.clearButton.TabIndex = 16;
+            this.clearButton.Text = "重置";
+            this.clearButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.clearButton.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // PSFunctionForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1920, 853);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.uiLabel2);
-            this.Controls.Add(this.uiLabel1);
-            this.Controls.Add(this.uiButton12);
-            this.Controls.Add(this.uiButton11);
-            this.Controls.Add(this.uiButton10);
-            this.Controls.Add(this.uiButton9);
-            this.Controls.Add(this.uiButton8);
-            this.Controls.Add(this.uiButton7);
-            this.Controls.Add(this.uiButton6);
-            this.Controls.Add(this.uiButton5);
-            this.Controls.Add(this.uiButton4);
-            this.Controls.Add(this.uiButton3);
-            this.Controls.Add(this.uiButton2);
-            this.Controls.Add(this.uiButton1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.uiPanel1);
+            this.Controls.Add(this.tipLabel);
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.openButton);
+            this.Controls.Add(this.centerButton);
+            this.Controls.Add(this.cutButton);
+            this.Controls.Add(this.softButton);
+            this.Controls.Add(this.darkButton);
+            this.Controls.Add(this.mosaicButton);
+            this.Controls.Add(this.reliefButton);
+            this.Controls.Add(this.fogButton);
+            this.Controls.Add(this.brightnessPlus);
+            this.Controls.Add(this.brightnessButtonminus);
+            this.Controls.Add(this.darkCornerButton);
+            this.Controls.Add(this.originalPicture);
+            this.Controls.Add(this.mainPanel);
             this.Name = "PSFunctionForm";
-            this.Text = "PSFunctionForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Style = Sunny.UI.UIStyle.Custom;
+            this.Text = "图片工作坊";
+            this.TitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.TitleForeColor = System.Drawing.Color.DarkSlateGray;
             this.ZoomScaleRect = new System.Drawing.Rectangle(19, 19, 1920, 1020);
-            this.uiPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.mainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.convertedPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.originalPicture)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Sunny.UI.UIPanel uiPanel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Sunny.UI.UIButton uiButton1;
-        private Sunny.UI.UIButton uiButton2;
-        private Sunny.UI.UIButton uiButton3;
-        private Sunny.UI.UIButton uiButton4;
-        private Sunny.UI.UIButton uiButton5;
-        private Sunny.UI.UIButton uiButton6;
-        private Sunny.UI.UIButton uiButton7;
-        private Sunny.UI.UIButton uiButton8;
-        private Sunny.UI.UIButton uiButton9;
-        private Sunny.UI.UIButton uiButton10;
-        private Sunny.UI.UIButton uiButton11;
-        private Sunny.UI.UIButton uiButton12;
-        private Sunny.UI.UILabel uiLabel1;
+        private Sunny.UI.UIPanel mainPanel;
+        private System.Windows.Forms.PictureBox convertedPicture;
+        private System.Windows.Forms.PictureBox originalPicture;
+        private Sunny.UI.UIButton darkCornerButton;
+        private Sunny.UI.UIButton brightnessButtonminus;
+        private Sunny.UI.UIButton brightnessPlus;
+        private Sunny.UI.UIButton fogButton;
+        private Sunny.UI.UIButton reliefButton;
+        private Sunny.UI.UIButton mosaicButton;
+        private Sunny.UI.UIButton darkButton;
+        private Sunny.UI.UIButton softButton;
+        private Sunny.UI.UIButton cutButton;
+        private Sunny.UI.UIButton centerButton;
+        private Sunny.UI.UIButton openButton;
+        private Sunny.UI.UIButton saveButton;
+        private Sunny.UI.UILabel tipLabel;
         private Sunny.UI.UILabel uiLabel2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private Sunny.UI.UIButton clearButton;
     }
 }

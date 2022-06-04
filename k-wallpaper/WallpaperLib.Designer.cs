@@ -31,7 +31,7 @@
             this.picBox = new Sunny.UI.UIFlowLayoutPanel();
             this.uiMarkLabel1 = new Sunny.UI.UIMarkLabel();
             this.importBtn = new Sunny.UI.UIButton();
-            this.uiButton2 = new Sunny.UI.UIButton();
+            this.search_Btn = new Sunny.UI.UIButton();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.uiMarkLabel1.MarkPos = Sunny.UI.UIMarkLabel.UIMarkPos.Bottom;
             this.uiMarkLabel1.Name = "uiMarkLabel1";
             this.uiMarkLabel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.uiMarkLabel1.Size = new System.Drawing.Size(100, 23);
+            this.uiMarkLabel1.Size = new System.Drawing.Size(92, 32);
             this.uiMarkLabel1.TabIndex = 2;
             this.uiMarkLabel1.Text = "本地壁纸";
             this.uiMarkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -77,24 +77,25 @@
             this.importBtn.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.importBtn.Click += new System.EventHandler(this.importBtn_Click);
             // 
-            // uiButton2
+            // search_Btn
             // 
-            this.uiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton2.Location = new System.Drawing.Point(1137, 48);
-            this.uiButton2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton2.Name = "uiButton2";
-            this.uiButton2.Size = new System.Drawing.Size(83, 24);
-            this.uiButton2.TabIndex = 4;
-            this.uiButton2.Text = "搜索";
-            this.uiButton2.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.search_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.search_Btn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.search_Btn.Location = new System.Drawing.Point(1137, 48);
+            this.search_Btn.MinimumSize = new System.Drawing.Size(1, 1);
+            this.search_Btn.Name = "search_Btn";
+            this.search_Btn.Size = new System.Drawing.Size(83, 24);
+            this.search_Btn.TabIndex = 4;
+            this.search_Btn.Text = "搜索";
+            this.search_Btn.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.search_Btn.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.search_Btn.Click += new System.EventHandler(this.search_Btn_Click);
             // 
             // WallpaperLib
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.uiButton2);
+            this.Controls.Add(this.search_Btn);
             this.Controls.Add(this.importBtn);
             this.Controls.Add(this.uiMarkLabel1);
             this.Controls.Add(this.picBox);
@@ -109,7 +110,7 @@
         private Sunny.UI.UIFlowLayoutPanel picBox;
         private Sunny.UI.UIMarkLabel uiMarkLabel1;
         private Sunny.UI.UIButton importBtn;
-        private Sunny.UI.UIButton uiButton2;
+        private Sunny.UI.UIButton search_Btn;
         private System.Windows.Forms.OpenFileDialog ofd;
     }
 }
