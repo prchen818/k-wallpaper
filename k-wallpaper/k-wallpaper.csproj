@@ -33,6 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>packages\AWSSDK.Core.3.7.11.11\lib\net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="SunnyUI, Version=3.1.9.0, Culture=neutral, PublicKeyToken=27d7d2e821d97aeb, processorArchitecture=MSIL">
       <HintPath>packages\SunnyUI.3.1.9\lib\net472\SunnyUI.dll</HintPath>
     </Reference>
@@ -40,6 +47,7 @@
       <HintPath>packages\SunnyUI.Common.3.1.2\lib\net472\SunnyUI.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Web.Extensions" />
@@ -54,6 +62,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNote.Designer.cs">
+      <DependentUpon>AddNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckAll.Designer.cs">
+      <DependentUpon>CheckAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CJson.cs" />
+    <Compile Include="DailyDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DailyDisplay.Designer.cs">
+      <DependentUpon>DailyDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyJsonHelper.cs" />
+    <Compile Include="NoteMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoteMain.Designer.cs">
+      <DependentUpon>NoteMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="wallpaperimg.cs" />
     <Compile Include="selfdesign.cs">
       <SubType>Form</SubType>
@@ -91,6 +126,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddNote.resx">
+      <DependentUpon>AddNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckAll.resx">
+      <DependentUpon>CheckAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyDisplay.resx">
+      <DependentUpon>DailyDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoteMain.resx">
+      <DependentUpon>NoteMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="selfdesign.resx">
       <DependentUpon>selfdesign.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,7 +163,9 @@
     <EmbeddedResource Include="WallpaperLib.resx">
       <DependentUpon>WallpaperLib.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="MessageSaving.json" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CJson.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

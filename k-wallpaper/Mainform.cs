@@ -41,9 +41,9 @@ namespace k_wallpaper
 
         private void uiImageButton2_Click(object sender, EventArgs e)
         {
-            selfdesign sd = new selfdesign();
+            NoteMain noteMain = new NoteMain();
             this.Hide();
-            sd.Show();
+            noteMain.Show();
         }
     }
 }
