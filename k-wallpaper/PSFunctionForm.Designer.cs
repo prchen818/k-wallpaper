@@ -272,7 +272,7 @@ namespace k_wallpaper
             this.saveButton.Size = new System.Drawing.Size(100, 35);
             this.saveButton.Style = Sunny.UI.UIStyle.Custom;
             this.saveButton.TabIndex = 13;
-            this.saveButton.Text = "保存";
+            this.saveButton.Text = "另存为";
             this.saveButton.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.saveButton.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
