@@ -33,6 +33,10 @@
             this.importBtn = new Sunny.UI.UIButton();
             this.search_Btn = new Sunny.UI.UIButton();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
+            this.picHistory = new Sunny.UI.UIListBox();
+            this.leftPanel = new Sunny.UI.UIPanel();
+            this.leftshow = new Sunny.UI.UIButton();
+            this.leftPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // picBox
@@ -91,10 +95,62 @@
             this.search_Btn.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.search_Btn.Click += new System.EventHandler(this.search_Btn_Click);
             // 
+            // picHistory
+            // 
+            this.picHistory.FillColor = System.Drawing.Color.White;
+            this.picHistory.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.picHistory.Location = new System.Drawing.Point(4, 5);
+            this.picHistory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picHistory.MinimumSize = new System.Drawing.Size(1, 1);
+            this.picHistory.Name = "picHistory";
+            this.picHistory.Padding = new System.Windows.Forms.Padding(2);
+            this.picHistory.ShowText = false;
+            this.picHistory.Size = new System.Drawing.Size(190, 490);
+            this.picHistory.TabIndex = 3;
+            this.picHistory.Text = "uiListBox1";
+            this.picHistory.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // leftPanel
+            // 
+            this.leftPanel.BackColor = System.Drawing.Color.Transparent;
+            this.leftPanel.Controls.Add(this.leftshow);
+            this.leftPanel.Controls.Add(this.picHistory);
+            this.leftPanel.FillColor = System.Drawing.Color.Transparent;
+            this.leftPanel.FillColor2 = System.Drawing.Color.Transparent;
+            this.leftPanel.FillDisableColor = System.Drawing.Color.Transparent;
+            this.leftPanel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.leftPanel.Location = new System.Drawing.Point(-190, 126);
+            this.leftPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.leftPanel.MinimumSize = new System.Drawing.Size(1, 1);
+            this.leftPanel.Name = "leftPanel";
+            this.leftPanel.RectColor = System.Drawing.Color.Transparent;
+            this.leftPanel.RectDisableColor = System.Drawing.Color.Transparent;
+            this.leftPanel.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
+            this.leftPanel.Size = new System.Drawing.Size(221, 500);
+            this.leftPanel.Style = Sunny.UI.UIStyle.Custom;
+            this.leftPanel.TabIndex = 5;
+            this.leftPanel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.leftPanel.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // leftshow
+            // 
+            this.leftshow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.leftshow.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.leftshow.Location = new System.Drawing.Point(193, 5);
+            this.leftshow.MinimumSize = new System.Drawing.Size(1, 1);
+            this.leftshow.Name = "leftshow";
+            this.leftshow.Size = new System.Drawing.Size(31, 490);
+            this.leftshow.TabIndex = 4;
+            this.leftshow.Text = "历史";
+            this.leftshow.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.leftshow.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.leftshow.Click += new System.EventHandler(this.leftshow_Click);
+            // 
             // WallpaperLib
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.leftPanel);
             this.Controls.Add(this.search_Btn);
             this.Controls.Add(this.importBtn);
             this.Controls.Add(this.uiMarkLabel1);
@@ -102,6 +158,7 @@
             this.Name = "WallpaperLib";
             this.Text = "Form1";
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 800, 450);
+            this.leftPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -112,5 +169,8 @@
         private Sunny.UI.UIButton importBtn;
         private Sunny.UI.UIButton search_Btn;
         private System.Windows.Forms.OpenFileDialog ofd;
+        private Sunny.UI.UIListBox picHistory;
+        private Sunny.UI.UIPanel leftPanel;
+        private Sunny.UI.UIButton leftshow;
     }
 }

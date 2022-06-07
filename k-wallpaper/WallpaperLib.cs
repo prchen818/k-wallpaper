@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,9 +19,12 @@ namespace k_wallpaper
         {
             InitializeComponent();
             refresh();
+            picHistory.DataSource = pics;
         }
 
+        List<string> pics = new List<string>{ "1", "2" };
         string storePath = @"PictureLib/";
+        bool sign = false;
 
         private void importBtn_Click(object sender, EventArgs e)
         {
@@ -56,14 +60,27 @@ namespace k_wallpaper
                 System.IO.Directory.CreateDirectory(storePath);
             }
             picBox.Clear();
-            string[] imgs = Directory.GetFiles(storePath, "*.jpg");
-            if (imgs.Length == 0)
+            string[] extensions = { "*.jpg", "*.jpeg", "*.mp4", "*.png", "*.gif" };
+
+            foreach(string pattern in extensions)
+            {
+                string[] imgs = Directory.GetFiles(storePath, pattern);
+                if (imgs.Length == 0)
+                {
+                    continue;
+                }
+                addpicture2lib(imgs);
+            }
+            if (picBox.IsNull())
             {
                 UILabel lb = new UILabel();
                 lb.Text = "壁纸库为空";
                 picBox.Add(lb);
-                return;
             }
+        }
+
+        private void addpicture2lib(string[] imgs)
+        {
             foreach (string img in imgs)
             {
                 PictureBox pb = new PictureBox();
@@ -86,6 +103,30 @@ namespace k_wallpaper
         private void search_Btn_Click(object sender, EventArgs e)
         {
             new NetSearch().Show();
+        }
+
+        private void leftshow_Click(object sender, EventArgs e)
+        {
+            if (!sign)
+            {
+                for (int i = 0; i < 190; i++)
+                {
+                    leftPanel.Location = new Point(leftPanel.Location.X + 1, leftPanel.Location.Y);
+                    //Thread.Sleep(10);
+                }
+                leftshow.Text = "收起";
+                sign = !sign;
+            }
+            else
+            {
+                for (int i = 0; i < 190; i++)
+                {
+                    leftPanel.Location = new Point(leftPanel.Location.X - 1, leftPanel.Location.Y);
+                    //Thread.Sleep(10);
+                }
+                leftshow.Text = "历史";
+                sign = !sign;
+            }
         }
     }
 }

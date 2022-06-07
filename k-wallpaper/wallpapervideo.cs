@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,7 @@ namespace k_wallpaper
                     Width = x,
                     Height = y,
                     Stretch = Stretch.Fill,
-                    Source = new Uri(wallpaper.path)
+                    Source = new Uri(Path.GetFullPath(wallpaper.path))
                 };
 
                 Media.MediaEnded += ((s, e) =>
