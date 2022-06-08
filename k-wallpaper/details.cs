@@ -12,8 +12,10 @@ using Sunny.UI;
 
 namespace k_wallpaper
 {
+   
     public partial class details : UIForm
     {
+        public wallpaper k_w = new wallpaper();
         public details()
         {
             InitializeComponent();
@@ -36,9 +38,8 @@ namespace k_wallpaper
 
         private void setwallpaper_Click(object sender, EventArgs e)
         {
-            wallpaper kw = new wallpaper();
-            kw.SetWallpaper(picbox.ImageLocation);
-            wallpapercore.GetWallpaperCore(kw);
+           k_w.SetWallpaper(picbox.ImageLocation);
+            wallpapercore.GetWallpaperCore(k_w);
         }
 
         private void Btn_rename_Click(object sender, EventArgs e)

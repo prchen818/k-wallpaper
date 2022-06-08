@@ -26,7 +26,9 @@ namespace k_wallpaper
         }
         public static void Close()
         {
-       
+            _wallpaper.Close();
+           _wallpaper.ToOldWallpaper();
+           // _wallpaper.SetWallpaper(p);
         }
         public static wallpapercore GetWallpaperCore(wallpaper wallpaper)
         {

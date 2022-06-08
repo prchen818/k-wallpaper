@@ -114,7 +114,7 @@ namespace k_wallpaper
             this.picName.MarkPos = Sunny.UI.UIMarkLabel.UIMarkPos.Bottom;
             this.picName.Name = "picName";
             this.picName.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.picName.Size = new System.Drawing.Size(92, 32);
+            this.picName.Size = new System.Drawing.Size(146, 46);
             this.picName.TabIndex = 11;
             this.picName.Text = "图片名称";
             this.picName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -139,7 +139,7 @@ namespace k_wallpaper
             this.renameText.MinimumSize = new System.Drawing.Size(1, 16);
             this.renameText.Name = "renameText";
             this.renameText.ShowText = false;
-            this.renameText.Size = new System.Drawing.Size(150, 29);
+            this.renameText.Size = new System.Drawing.Size(117, 29);
             this.renameText.TabIndex = 13;
             this.renameText.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.renameText.Visible = false;

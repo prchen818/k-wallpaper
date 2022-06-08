@@ -114,7 +114,7 @@ namespace k_wallpaper
                     leftPanel.Location = new Point(leftPanel.Location.X + 1, leftPanel.Location.Y);
                     //Thread.Sleep(10);
                 }
-                leftshow.Text = "收起";
+                leftshow.Text = "收\n起\n";
                 sign = !sign;
             }
             else
@@ -124,7 +124,7 @@ namespace k_wallpaper
                     leftPanel.Location = new Point(leftPanel.Location.X - 1, leftPanel.Location.Y);
                     //Thread.Sleep(10);
                 }
-                leftshow.Text = "历史";
+                leftshow.Text = "历\n史\n";
                 sign = !sign;
             }
         }

@@ -115,20 +115,15 @@
             this.leftPanel.BackColor = System.Drawing.Color.Transparent;
             this.leftPanel.Controls.Add(this.leftshow);
             this.leftPanel.Controls.Add(this.picHistory);
-            this.leftPanel.FillColor = System.Drawing.Color.Transparent;
-            this.leftPanel.FillColor2 = System.Drawing.Color.Transparent;
-            this.leftPanel.FillDisableColor = System.Drawing.Color.Transparent;
             this.leftPanel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.leftPanel.Location = new System.Drawing.Point(-190, 126);
             this.leftPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.leftPanel.MinimumSize = new System.Drawing.Size(1, 1);
             this.leftPanel.Name = "leftPanel";
-            this.leftPanel.RectColor = System.Drawing.Color.Transparent;
-            this.leftPanel.RectDisableColor = System.Drawing.Color.Transparent;
             this.leftPanel.RectSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.None;
             this.leftPanel.Size = new System.Drawing.Size(221, 500);
-            this.leftPanel.Style = Sunny.UI.UIStyle.Custom;
             this.leftPanel.TabIndex = 5;
+            this.leftPanel.Text = null;
             this.leftPanel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.leftPanel.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
@@ -139,9 +134,10 @@
             this.leftshow.Location = new System.Drawing.Point(193, 5);
             this.leftshow.MinimumSize = new System.Drawing.Size(1, 1);
             this.leftshow.Name = "leftshow";
+            this.leftshow.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.leftshow.Size = new System.Drawing.Size(31, 490);
             this.leftshow.TabIndex = 4;
-            this.leftshow.Text = "历史";
+            this.leftshow.Text = "历\n史\n";
             this.leftshow.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.leftshow.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.leftshow.Click += new System.EventHandler(this.leftshow_Click);

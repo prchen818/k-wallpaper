@@ -8,6 +8,7 @@ using System.Windows;
 using System.Drawing;
 
 
+
 namespace k_wallpaper
 {
     public class wallpaper
@@ -59,19 +60,33 @@ namespace k_wallpaper
                 }
             }
 
-            public void ToOldWallpaper()
+        public void SetWallpaper(string fullPath)
+        {
+            path = fullPath;
+            wallpapercore.GetWallpaperCore(this);
+        }
+        public void ToOldWallpaper()
             {
+            string p;
                 try
                 {
                     foreach (var file in new DirectoryInfo(oldWallpaperFolder).GetFiles())
                     {
-                        if (file.Name.Contains(Fullscreen.Height.ToString()) && file.Name.Contains(Fullscreen.Width.ToString()))
-                        {
-                            Graphics.FromHdc(util.GetDC(Handle)).DrawImage(Image.FromFile(file.FullName), Fullscreen);
-                            break;
-                        }
+                    if (file.Name.Contains(2560+"") && file.Name.Contains(1600+""))
+                    {
+                       Console.WriteLine("已找到"+file.FullName);
+                        Graphics.FromHdc(util.GetDC(Handle)).DrawImage(Image.FromFile(file.FullName), Fullscreen);
+                      
+                        SetWallpaper(file.FullName);
+                        break;
+
+                        // return path = oldWallpaperFolder + file.Name+file.Extension;
+
+                    }
+                    //return null;
                     }
                 }
+                   
                 catch (FileNotFoundException exception)
                 {
                 MessageBox.Show($"{exception.Data.ToString()}\n{exception.Message}\n{exception.Source}\n{exception.StackTrace}\n{exception.TargetSite}\n很抱歉, 我们未能找到您原来的壁纸, 请手动恢复");
@@ -80,13 +95,10 @@ namespace k_wallpaper
                 {
                 MessageBox.Show($"{exception.Data.ToString()}\n{exception.Message}\n{exception.Source}\n{exception.StackTrace}\n{exception.TargetSite}\n很抱歉,在应用原壁纸时出现异常!");
             }
+            //return null;
             }
 
-            public void SetWallpaper(string fullPath)
-            {
-                path = fullPath;
-                wallpapercore.GetWallpaperCore(this);
-            }
+           
         }
     }
 
