@@ -27,6 +27,7 @@ namespace k_wallpaper
             picbox.wpLocation=box.wpLocation;
             picbox.Image = box.Image;
             picName.Text = Path.GetFileNameWithoutExtension(box.wpLocation);
+            HistoryHelper.Write_Json(box.wpLocation);
         }
 
         private void Btn2PS_Click(object sender, EventArgs e)

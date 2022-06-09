@@ -136,8 +136,8 @@ namespace k_wallpaper
 
         private void loadHistory()
         {
-            pics = HistoryJsonHelper.readjson();
-            
+            pics = HistoryHelper.Read_Json();
+            picHistory.DataSource = pics;
         }
 
         
@@ -153,50 +153,6 @@ namespace k_wallpaper
         }
     }
 
-    public class HistoryJsonHelper
-    {
-        public static List<string> readjson()
-        {
-            try
-            {
-                StreamReader file = File.OpenText("WallpaperHistory.json");
-                string jhis = file.ReadToEnd();
-                List<string> vs = JsonConvert.DeserializeObject<List<string>>(jhis);
-                return vs;
-            }
-            catch (FileNotFoundException ex)
-            {
-                File.Create("WallpaperHistory.json");
-                return new List<string>();
-            }
-
-        }
-
-        public static void writejson(List<string> ls)
-        {
-            try
-            {
-                string js = JsonConvert.SerializeObject(ls);
-                File.WriteAllText("WallpaperHistory.json", js);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        public static void addjson(string s)
-        {
-            string jhis = File.ReadAllText("WallpaperHistory.json");
-            List<string> ls = JsonConvert.DeserializeObject<List<string>>(jhis);
-            if (ls.Exists(x => x.Equals(s)))
-            {
-                return;
-            }
-            ls.Add(s);
-            string js = JsonConvert.SerializeObject(ls);
-            File.WriteAllText("WallpaperHistory.json", js);
-        }
-    }
+   
 
 }
