@@ -70,6 +70,7 @@ namespace k_wallpaper
                     {
                         File.Move(srcPath, desPath);
                         picName.Text = renameText.Text;
+                        HistoryHelper.Write_Json(srcPath);
                     }
                     catch (Exception ex)
                     {
@@ -84,6 +85,7 @@ namespace k_wallpaper
 
             picName.Visible = true;
             renameText.Visible = false;
+           
         }
 
         private void renameText_KeyPress(object sender, KeyPressEventArgs e)

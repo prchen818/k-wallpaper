@@ -47,7 +47,13 @@ namespace k_wallpaper
                 string jsonString = File.ReadAllText("WallpaperHistory.json", Encoding.UTF8);
                 JObject jsonObject = JObject.Parse(jsonString);
                 JObject jobj = new JObject();
+               //防止重复写入
+                if (jsonString.Contains(js))
+                {
+                    return;
+                }
                 jobj.Add(new JProperty(js));
+            
                 jsonObject["path"].Last.AddAfterSelf(js);
                 string convertingString = Convert.ToString(jsonObject);
                 File.WriteAllText("WallpaperHistory.json", convertingString);

@@ -140,7 +140,26 @@ namespace k_wallpaper
             picHistory.DataSource = pics;
         }
 
-        
+        private void picHistory_ItemClick(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                string a = picHistory.SelectedItem.ToString();
+                 string path = @"" + a;
+                WallpaperBox pic = new WallpaperBox();
+                pic.wpLocation = path;
+                pic.Image = Image.FromFile(path);
+                details details = new details(pic);
+                details.Show();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("文件已被修改或不存在!");
+                
+            }
+        }
     }
 
     public class WallpaperBox: PictureBox
@@ -151,6 +170,16 @@ namespace k_wallpaper
         {
 
         }
+    }
+    
+    public  class itemwallpaperbox:PictureBox
+    {
+        public string path;
+         public itemwallpaperbox() : base()
+        {
+
+        }
+
     }
 
    

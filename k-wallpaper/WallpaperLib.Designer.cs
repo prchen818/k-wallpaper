@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.picBox = new Sunny.UI.UIFlowLayoutPanel();
+            this.leftshow = new Sunny.UI.UIButton();
             this.uiMarkLabel1 = new Sunny.UI.UIMarkLabel();
             this.importBtn = new Sunny.UI.UIButton();
             this.search_Btn = new Sunny.UI.UIButton();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.picHistory = new Sunny.UI.UIListBox();
             this.leftPanel = new Sunny.UI.UIPanel();
-            this.leftshow = new Sunny.UI.UIButton();
             this.leftPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +53,21 @@
             this.picBox.Text = "uiFlowLayoutPanel1";
             this.picBox.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.picBox.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // leftshow
+            // 
+            this.leftshow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.leftshow.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.leftshow.Location = new System.Drawing.Point(193, 3);
+            this.leftshow.MinimumSize = new System.Drawing.Size(1, 1);
+            this.leftshow.Name = "leftshow";
+            this.leftshow.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.leftshow.Size = new System.Drawing.Size(31, 490);
+            this.leftshow.TabIndex = 4;
+            this.leftshow.Text = "历\n史\n";
+            this.leftshow.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.leftshow.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.leftshow.Click += new System.EventHandler(this.leftshow_Click);
             // 
             // uiMarkLabel1
             // 
@@ -109,12 +124,13 @@
             this.picHistory.TabIndex = 3;
             this.picHistory.Text = "uiListBox1";
             this.picHistory.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.picHistory.ItemClick += new System.EventHandler(this.picHistory_ItemClick);
             // 
             // leftPanel
             // 
             this.leftPanel.BackColor = System.Drawing.Color.Transparent;
-            this.leftPanel.Controls.Add(this.leftshow);
             this.leftPanel.Controls.Add(this.picHistory);
+            this.leftPanel.Controls.Add(this.leftshow);
             this.leftPanel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.leftPanel.Location = new System.Drawing.Point(-190, 126);
             this.leftPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -126,21 +142,6 @@
             this.leftPanel.Text = null;
             this.leftPanel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.leftPanel.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // leftshow
-            // 
-            this.leftshow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.leftshow.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.leftshow.Location = new System.Drawing.Point(193, 5);
-            this.leftshow.MinimumSize = new System.Drawing.Size(1, 1);
-            this.leftshow.Name = "leftshow";
-            this.leftshow.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.leftshow.Size = new System.Drawing.Size(31, 490);
-            this.leftshow.TabIndex = 4;
-            this.leftshow.Text = "历\n史\n";
-            this.leftshow.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.leftshow.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.leftshow.Click += new System.EventHandler(this.leftshow_Click);
             // 
             // WallpaperLib
             // 
