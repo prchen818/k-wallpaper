@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sunny.UI;
+using Newtonsoft.Json;
+using k_wallpaper;
 
 namespace k_wallpaper
 {
@@ -19,10 +21,10 @@ namespace k_wallpaper
         {
             InitializeComponent();
             refresh();
-            picHistory.DataSource = pics;
+            loadHistory();
         }
 
-        List<string> pics = new List<string>{ "1", "2" };
+        List<string> pics = new List<string>();
         string storePath = @"PictureLib/";
         bool sign = false;
 
@@ -83,13 +85,26 @@ namespace k_wallpaper
         {
             foreach (string img in imgs)
             {
-                PictureBox pb = new PictureBox();
-                pb.Size = new Size(320, 180);
-                pb.ImageLocation = img;
-                pb.SizeMode = PictureBoxSizeMode.Zoom;
-                pb.BorderStyle = BorderStyle.FixedSingle;
-                pb.DoubleClick += new EventHandler(showDetails);
-                picBox.Add(pb);
+                if (Path.GetExtension(img) != ".mp4")
+                {
+                    PictureBox pb = new PictureBox();
+                    pb.Size = new Size(320, 180);
+                    pb.ImageLocation = img;
+                    pb.SizeMode = PictureBoxSizeMode.Zoom;
+                    pb.BorderStyle = BorderStyle.FixedSingle;
+                    pb.DoubleClick += new EventHandler(showDetails);
+                    picBox.Add(pb);
+                }
+                else
+                {
+                    PictureBox pb = new PictureBox();
+                    pb.Size = new Size(320, 180);
+                    pb.Image = util.GetThumbnailByPath(img);
+                    pb.SizeMode = PictureBoxSizeMode.Zoom;
+                    pb.BorderStyle = BorderStyle.FixedSingle;
+                    pb.DoubleClick += new EventHandler(showDetails);
+                    picBox.Add(pb);
+                }
             }
         }
 
@@ -128,5 +143,59 @@ namespace k_wallpaper
                 sign = !sign;
             }
         }
+
+        private void loadHistory()
+        {
+            pics = HistoryJsonHelper.readjson();
+            
+        }
+
+        
     }
+    public class HistoryJsonHelper
+    {
+        public static List<string> readjson()
+        {
+            try
+            {
+                StreamReader file = File.OpenText("WallpaperHistory.json");
+                string jhis = file.ReadToEnd();
+                List<string> vs = JsonConvert.DeserializeObject<List<string>>(jhis);
+                return vs;
+            }
+            catch (FileNotFoundException ex)
+            {
+                File.Create("WallpaperHistory.json");
+                return new List<string>();
+            }
+
+        }
+
+        public static void writejson(List<string> ls)
+        {
+            try
+            {
+                string js = JsonConvert.SerializeObject(ls);
+                File.WriteAllText("WallpaperHistory.json", js);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void addjson(string s)
+        {
+            string jhis = File.ReadAllText("WallpaperHistory.json");
+            List<string> ls = JsonConvert.DeserializeObject<List<string>>(jhis);
+            if (ls.Exists(x => x.Equals(s)))
+            {
+                return;
+            }
+            ls.Add(s);
+            string js = JsonConvert.SerializeObject(ls);
+            File.WriteAllText("WallpaperHistory.json", js);
+        }
+    }
+
 }
