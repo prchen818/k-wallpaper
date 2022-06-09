@@ -167,6 +167,7 @@
     <EmbeddedResource Include="NoteMain.resx">
       <DependentUpon>NoteMain.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="wallpapernote.cs" />
     <Compile Include="wallpapervideo.cs" />
     <EmbeddedResource Include="instruction.resx">
       <DependentUpon>instruction.cs</DependentUpon>

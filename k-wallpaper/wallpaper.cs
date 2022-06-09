@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows;
 using System.Drawing;
-
+using Sunny.UI;
 
 
 namespace k_wallpaper
@@ -24,7 +24,9 @@ namespace k_wallpaper
         private string oldWallpaperFolder;
 
         private wallpapercore wallpaperCore;
-        
+
+        private wallpapernote _wallpapernote;
+
         public wallpaper()
         {
             Fullscreen = util.GetFullscreen();
@@ -57,6 +59,11 @@ namespace k_wallpaper
                 Window.Close();
                 Window = null;
             }
+            if (_wallpapernote != null)
+            {
+                _wallpapernote.Close();
+                _wallpapernote = null;
+            }
         }
 
         public void SetWallpaper(string fullPath)
@@ -64,10 +71,18 @@ namespace k_wallpaper
             path = fullPath;
             wallpapercore.Close();
             wallpaperCore = wallpapercore.GetWallpaperCore(this);
-            wallpapercore.GetWallpaperCore(this);
 
-            NoteMain shownote = new NoteMain(1);
-            shownote.Show();
+            if (_wallpapernote != null)
+            {
+                _wallpapernote.Close();
+            }
+            _wallpapernote = new wallpapernote();
+
+/*            UITableLayoutPanel p = new UITableLayoutPanel();
+            NoteMain.load(p);
+            wallpapercore._wallpaper.Window.Controls.Add(p);
+            wallpapercore._wallpaper.Window.Controls.Find(p).BringToFront();*/
+
 
         }
 

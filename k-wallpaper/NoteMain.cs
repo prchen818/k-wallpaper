@@ -23,11 +23,27 @@ namespace k_wallpaper
                 uiTableLayoutPanel1.Controls.Add(test);
             }
         }
+
+        public static void load(UITableLayoutPanel p)
+        {
+            List<CJson> cJsons = NoteMain.check(MyJsonHelper.Read_Json());
+
+            for (int i = 0; i < cJsons.Count; i++)
+            {
+                DailyDisplay test = new DailyDisplay(cJsons[i].title, cJsons[i].EventType, cJsons[i].Date + cJsons[i].Time);
+                p.Controls.Add(test);
+            }
+        }
+
         public NoteMain()
         {
             InitializeComponent();
-            Loading();
+            load(uiTableLayoutPanel1);
+            
         }
+        
+
+
 
         public NoteMain(int show)
         {
@@ -54,7 +70,7 @@ namespace k_wallpaper
             checkAll.Show();
         }
 
-        public List<CJson> check(List<CJson> clist)
+        public static List<CJson> check(List<CJson> clist)
         {
             List<CJson> todaylist = new List<CJson>();
             for(int i=0;i<clist.Count;i++)
@@ -75,6 +91,10 @@ namespace k_wallpaper
             Loading();
         }
 
-       
+        public UITableLayoutPanel GetPanel()
+        {
+            return uiTableLayoutPanel1;
+        }
+
     }
 }

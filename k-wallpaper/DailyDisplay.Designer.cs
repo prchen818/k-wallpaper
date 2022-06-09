@@ -42,7 +42,7 @@ namespace k_wallpaper
             this.Eventlabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Eventlabel.Location = new System.Drawing.Point(24, 5);
             this.Eventlabel.Name = "Eventlabel";
-            this.Eventlabel.Size = new System.Drawing.Size(58, 29);
+            this.Eventlabel.Size = new System.Drawing.Size(74, 37);
             this.Eventlabel.TabIndex = 0;
             this.Eventlabel.Text = "aaa";
             // 
@@ -51,7 +51,7 @@ namespace k_wallpaper
             this.Time.AutoSize = true;
             this.Time.Location = new System.Drawing.Point(24, 40);
             this.Time.Name = "Time";
-            this.Time.Size = new System.Drawing.Size(0, 21);
+            this.Time.Size = new System.Drawing.Size(0, 27);
             this.Time.TabIndex = 1;
             // 
             // Type
@@ -59,7 +59,7 @@ namespace k_wallpaper
             this.Type.AutoSize = true;
             this.Type.Location = new System.Drawing.Point(148, 13);
             this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(0, 21);
+            this.Type.Size = new System.Drawing.Size(0, 27);
             this.Type.TabIndex = 2;
             // 
             // checkBox1
@@ -67,7 +67,7 @@ namespace k_wallpaper
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(3, 3);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.Size = new System.Drawing.Size(18, 17);
             this.checkBox1.TabIndex = 3;
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -81,6 +81,7 @@ namespace k_wallpaper
             this.Controls.Add(this.Time);
             this.Controls.Add(this.Eventlabel);
             this.Name = "DailyDisplay";
+            this.Radius = 10;
             this.Size = new System.Drawing.Size(300, 69);
             this.Text = "";
             this.ResumeLayout(false);
