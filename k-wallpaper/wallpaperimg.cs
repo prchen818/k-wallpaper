@@ -38,10 +38,6 @@ namespace k_wallpaper
 
 
         }
-        public new void Close()
-        {
-            _wallpaper.Close();
-            _wallpaper.ToOldWallpaper();
-        }
+        
     }
 }
