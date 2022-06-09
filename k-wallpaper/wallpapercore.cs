@@ -9,7 +9,7 @@ namespace k_wallpaper
 {
     public abstract class wallpapercore
     {
-        public static  wallpaper _wallpaper;
+        public static  wallpaper _wallpaper=new wallpaper();
 
        // public string pathway;
 
@@ -24,12 +24,12 @@ namespace k_wallpaper
         {
             _wallpaper = wallpaper;
         }
+
         public static void Close()
         {
             _wallpaper.Close();
-           _wallpaper.ToOldWallpaper();
-           // _wallpaper.SetWallpaper(p);
         }
+
         public static wallpapercore GetWallpaperCore(wallpaper wallpaper)
         {
             var extention = Path.GetExtension(wallpaper.path).ToLower();
@@ -39,9 +39,9 @@ namespace k_wallpaper
             }
             else if (vedioExtentions.Contains(extention))
             {
-               return new wallpapervideo(wallpaper);
+                return new wallpapervideo(wallpaper);
             }
-           //
+            
             else
             {
                 throw new ArgumentException("无效的格式", $"文件后缀为{extention}");

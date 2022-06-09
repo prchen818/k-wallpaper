@@ -15,7 +15,6 @@ namespace k_wallpaper
    
     public partial class details : UIForm
     {
-        public wallpaper k_w = new wallpaper();
         public details()
         {
             InitializeComponent();
@@ -38,8 +37,8 @@ namespace k_wallpaper
 
         private void setwallpaper_Click(object sender, EventArgs e)
         {
-           k_w.SetWallpaper(picbox.ImageLocation);
-            wallpapercore.GetWallpaperCore(k_w);
+            Mainform.k_w.SetWallpaper(picbox.ImageLocation);
+            //Mainform.k_w.SetWallpaper(@"C:\Users\沛\AppData\Roaming\Microsoft\Windows\Themes\CachedFiles\CachedImage_1920_1080_POS4.jpg");
         }
 
         private void Btn_rename_Click(object sender, EventArgs e)

@@ -36,10 +36,6 @@ namespace k_wallpaper
             util.SetWindowLong(_wallpaper.Window.Handle, util.WindowLongFlags.GWL_EXSTYLE, (int)util.WindowStylesEx.WS_EX_TOOLWINDOW | (int)util.WindowStylesEx.WS_EX_NOACTIVATE);
             util.SetWindowPos(_wallpaper.Window.Handle, IntPtr.Zero, 0, 0, _wallpaper.Fullscreen.Width, _wallpaper.Fullscreen.Height, util.SetWindowPosFlags.FrameChanged);
         }
-        public new void Close()
-        {
-            _wallpaper.Close();
-            _wallpaper.ToOldWallpaper();
-        }
+        
     }
 }

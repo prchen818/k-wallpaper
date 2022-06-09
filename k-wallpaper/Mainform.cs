@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using Sunny.UI;
 using System.Diagnostics;
 using k_wallpaper.Properties;
-using System.Windows;
 
 namespace k_wallpaper
 {
@@ -22,6 +21,7 @@ namespace k_wallpaper
             InitializeComponent();
             this.loadNotifyIcon();
         }
+        public static wallpaper k_w = new wallpaper();
 
         private void uiButton1_Click(object sender, EventArgs e)
         {
@@ -76,9 +76,10 @@ namespace k_wallpaper
 
         private void Btn_exit_Click(object sender, EventArgs e)
         {
+            k_w.Close();
+            k_w.ToOldWallpaper();
             wallpapercore.Close();
-            Environment.Exit(0);
-
+            Application.Exit();
         }
     }
 }
