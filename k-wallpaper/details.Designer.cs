@@ -29,7 +29,6 @@ namespace k_wallpaper
         /// </summary>
         private void InitializeComponent()
         {
-            this.uiButton1 = new Sunny.UI.UIButton();
             this.uiLabel4 = new Sunny.UI.UILabel();
             this.setwallpaper = new Sunny.UI.UIButton();
             this.Btn2PS = new Sunny.UI.UIButton();
@@ -39,19 +38,6 @@ namespace k_wallpaper
             this.renameText = new Sunny.UI.UITextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picbox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // uiButton1
-            // 
-            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.Location = new System.Drawing.Point(643, 658);
-            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(119, 32);
-            this.uiButton1.TabIndex = 0;
-            this.uiButton1.Text = "预览效果";
-            this.uiButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
             // uiLabel4
             // 
@@ -96,7 +82,7 @@ namespace k_wallpaper
             // 
             this.Btn_rename.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_rename.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Btn_rename.Location = new System.Drawing.Point(518, 658);
+            this.Btn_rename.Location = new System.Drawing.Point(643, 658);
             this.Btn_rename.MinimumSize = new System.Drawing.Size(1, 1);
             this.Btn_rename.Name = "Btn_rename";
             this.Btn_rename.Size = new System.Drawing.Size(119, 32);
@@ -114,7 +100,7 @@ namespace k_wallpaper
             this.picName.MarkPos = Sunny.UI.UIMarkLabel.UIMarkPos.Bottom;
             this.picName.Name = "picName";
             this.picName.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.picName.Size = new System.Drawing.Size(146, 46);
+            this.picName.Size = new System.Drawing.Size(74, 26);
             this.picName.TabIndex = 11;
             this.picName.Text = "图片名称";
             this.picName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -158,7 +144,6 @@ namespace k_wallpaper
             this.Controls.Add(this.Btn2PS);
             this.Controls.Add(this.setwallpaper);
             this.Controls.Add(this.uiLabel4);
-            this.Controls.Add(this.uiButton1);
             this.Name = "details";
             this.Text = "自定义壁纸";
             this.ZoomScaleRect = new System.Drawing.Rectangle(30, 30, 874, 649);
@@ -169,8 +154,6 @@ namespace k_wallpaper
         }
 
         #endregion
-
-        private Sunny.UI.UIButton uiButton1;
         private Sunny.UI.UILabel uiLabel4;
         private Sunny.UI.UIButton setwallpaper;
         private Sunny.UI.UIButton Btn2PS;
