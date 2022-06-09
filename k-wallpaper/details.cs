@@ -21,26 +21,27 @@ namespace k_wallpaper
         }
 
 
-        public details(string path)
+        public details(WallpaperBox box)
         {
             InitializeComponent();
-            picbox.ImageLocation = path;
-            picName.Text = Path.GetFileNameWithoutExtension(path);
+            picbox.wpLocation=box.wpLocation;
+            picbox.Image = box.Image;
+            picName.Text = Path.GetFileNameWithoutExtension(box.wpLocation);
         }
 
         private void Btn2PS_Click(object sender, EventArgs e)
         {
             
-            PSFunctionForm ps = new PSFunctionForm(picbox.ImageLocation);
+            PSFunctionForm ps = new PSFunctionForm(picbox.wpLocation);
             ps.Show();
         }
 
         private void setwallpaper_Click(object sender, EventArgs e)
         {
-            Mainform.k_w.SetWallpaper(picbox.ImageLocation);
+            Mainform.k_w.SetWallpaper(picbox.wpLocation);
             //Mainform.k_w.SetWallpaper(@"C:\Users\沛\AppData\Roaming\Microsoft\Windows\Themes\CachedFiles\CachedImage_1920_1080_POS4.jpg");
         }
-
+        
         private void Btn_rename_Click(object sender, EventArgs e)
         {
             renameText.Visible = true;
@@ -52,7 +53,7 @@ namespace k_wallpaper
         private void Rename()
         {
             picName.Visible = false;
-            string srcPath = picbox.ImageLocation;
+            string srcPath = picbox.wpLocation;
             string dicPath = Path.GetDirectoryName(srcPath);
             string extension = Path.GetExtension(srcPath);
             if (renameText.Text != "" || renameText.Text != null)

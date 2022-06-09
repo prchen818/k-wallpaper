@@ -85,33 +85,23 @@ namespace k_wallpaper
         {
             foreach (string img in imgs)
             {
-                if (Path.GetExtension(img) != ".mp4")
-                {
-                    PictureBox pb = new PictureBox();
-                    pb.Size = new Size(320, 180);
-                    pb.ImageLocation = img;
-                    pb.SizeMode = PictureBoxSizeMode.Zoom;
-                    pb.BorderStyle = BorderStyle.FixedSingle;
-                    pb.DoubleClick += new EventHandler(showDetails);
-                    picBox.Add(pb);
-                }
-                else
-                {
-                    PictureBox pb = new PictureBox();
-                    pb.Size = new Size(320, 180);
-                    pb.Image = util.GetThumbnailByPath(img);
-                    pb.SizeMode = PictureBoxSizeMode.Zoom;
-                    pb.BorderStyle = BorderStyle.FixedSingle;
-                    pb.DoubleClick += new EventHandler(showDetails);
-                    picBox.Add(pb);
-                }
+                
+                WallpaperBox pb = new WallpaperBox();
+                pb.Size = new Size(320, 180);
+                pb.Image = util.GetThumbnailByPath(img);
+                pb.wpLocation = img;
+                pb.SizeMode = PictureBoxSizeMode.Zoom;
+                pb.BorderStyle = BorderStyle.FixedSingle;
+                pb.DoubleClick += new EventHandler(showDetails);
+                picBox.Add(pb);
+                
             }
         }
 
         private void showDetails(object sender, EventArgs e)
         {
-            PictureBox pic = (PictureBox)sender;
-            details details = new details(pic.ImageLocation);
+            WallpaperBox pic = (WallpaperBox)sender;
+            details details = new details(pic);
             details.Show();
         }
 
@@ -152,6 +142,17 @@ namespace k_wallpaper
 
         
     }
+
+    public class WallpaperBox: PictureBox
+    {
+        public string wpLocation;
+
+        public WallpaperBox() : base()
+        {
+
+        }
+    }
+
     public class HistoryJsonHelper
     {
         public static List<string> readjson()

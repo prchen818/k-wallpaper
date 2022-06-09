@@ -34,7 +34,7 @@ namespace k_wallpaper
             this.Btn2PS = new Sunny.UI.UIButton();
             this.Btn_rename = new Sunny.UI.UIButton();
             this.picName = new Sunny.UI.UIMarkLabel();
-            this.picbox = new System.Windows.Forms.PictureBox();
+            this.picbox = new WallpaperBox();
             this.renameText = new Sunny.UI.UITextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picbox)).BeginInit();
             this.SuspendLayout();
@@ -159,7 +159,7 @@ namespace k_wallpaper
         private Sunny.UI.UIButton Btn2PS;
         private Sunny.UI.UIButton Btn_rename;
         private Sunny.UI.UIMarkLabel picName;
-        private System.Windows.Forms.PictureBox picbox;
+        private k_wallpaper.WallpaperBox picbox;
         private Sunny.UI.UITextBox renameText;
     }
 }
