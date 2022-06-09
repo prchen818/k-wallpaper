@@ -54,5 +54,6 @@ namespace k_wallpaper
 
         public event MyDelegate MyEvent;
 
+
     }
 }

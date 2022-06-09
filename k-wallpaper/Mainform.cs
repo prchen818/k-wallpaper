@@ -45,6 +45,7 @@ namespace k_wallpaper
         private void uiImageButton2_Click(object sender, EventArgs e)
         {
             NoteMain noteMain = new NoteMain();
+            
             this.Hide();
             noteMain.Show();
         }

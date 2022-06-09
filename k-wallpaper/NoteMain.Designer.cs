@@ -29,12 +29,10 @@ namespace k_wallpaper
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
-            this.uiMillisecondTimer1 = new Sunny.UI.UIMillisecondTimer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -79,11 +77,6 @@ namespace k_wallpaper
             this.uiTableLayoutPanel1.TabIndex = 4;
             this.uiTableLayoutPanel1.TagString = null;
             // 
-            // uiMillisecondTimer1
-            // 
-            this.uiMillisecondTimer1.Enabled = true;
-            this.uiMillisecondTimer1.Interval = 100;
-            // 
             // NoteMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -92,7 +85,11 @@ namespace k_wallpaper
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Location = new System.Drawing.Point(1300, 200);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NoteMain";
+            this.ShowInTaskbar = false;
             this.Text = "NoteMain";
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 800, 450);
             this.ResumeLayout(false);
@@ -106,6 +103,5 @@ namespace k_wallpaper
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel1;
-        private Sunny.UI.UIMillisecondTimer uiMillisecondTimer1;
     }
 }

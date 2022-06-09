@@ -48,10 +48,10 @@ namespace k_wallpaper
                     throw new startexception("未能找到壁纸层", "Wallpaper.Wallpaper");
                 }
 
-                   // SetWallpaper(@"..\..\102.jpg");
-            }
+            // SetWallpaper(@"..\..\102.jpg");
+        }
 
-            public void Close()
+        public void Close()
             {
                 if (Window != null)
                 {
@@ -64,6 +64,10 @@ namespace k_wallpaper
         {
             path = fullPath;
             wallpapercore.GetWallpaperCore(this);
+
+            NoteMain shownote = new NoteMain(1);
+            shownote.Show();
+
         }
         public void ToOldWallpaper()
             {

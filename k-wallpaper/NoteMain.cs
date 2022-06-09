@@ -26,10 +26,21 @@ namespace k_wallpaper
         public NoteMain()
         {
             InitializeComponent();
-
             Loading();
         }
 
+        public NoteMain(int show)
+        {
+            InitializeComponent();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Opacity = 0.7;
+            this.ControlBox = false;
+            this.ShowTitle = false;
+            this.button1.Visible = false;
+            this.button2.Visible = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Loading();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             AddNote add1 = new AddNote();
@@ -63,5 +74,7 @@ namespace k_wallpaper
             uiTableLayoutPanel1.ColumnCount = 1;
             Loading();
         }
+
+       
     }
 }
