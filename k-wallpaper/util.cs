@@ -14,11 +14,28 @@ using System.Windows.Markup;
 using System.Runtime.Serialization;
 using System.Media;
 using System.Windows.Interop;
+using Microsoft.WindowsAPICodePack.Shell;
 
 namespace k_wallpaper
 {
+
+
     internal class util
     {
+        /// <summary>
+        /// 用于获取缩略图
+        /// </summary>
+        /// <param name="filePath">文件路径</param>
+        /// <returns></returns>
+        public static Bitmap GetThumbnailByPath(string filePath)
+        {
+            ShellFile shellFile = ShellFile.FromFilePath(filePath);
+            Bitmap thumbnail = shellFile.Thumbnail.ExtraLargeBitmap;
+            return thumbnail;
+        }
+
+
+
         /// <summary>
         /// 获取窗体的句柄函数
         /// </summary>

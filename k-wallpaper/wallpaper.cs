@@ -72,11 +72,11 @@ namespace k_wallpaper
                 {
                     foreach (var file in new DirectoryInfo(oldWallpaperFolder).GetFiles())
                     {
-                    if (file.Name.Contains(2560+"") && file.Name.Contains(1600+""))
+                    if (file.Name.Contains(1920+"") && file.Name.Contains(1080+""))
                     {
-                       Console.WriteLine("已找到"+file.FullName);
-                        Graphics.FromHdc(util.GetDC(Handle)).DrawImage(Image.FromFile(file.FullName), Fullscreen);
-                      
+                        Console.WriteLine("已找到"+file.FullName);
+                        //Graphics.FromHdc(util.GetDC(Handle)).DrawImage(Image.FromFile(file.FullName), Fullscreen);
+                    
                         SetWallpaper(file.FullName);
                         break;
 
