@@ -35,6 +35,11 @@ namespace k_wallpaper
         }
 
 
+        //获取当前系统壁纸文件路径
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern bool SystemParametersInfo(uint uAction, uint uParam, StringBuilder lpvParam, uint init);
+        public const uint SPI_GETDESKWALLPAPER = 0x0073;
+
 
         /// <summary>
         /// 获取窗体的句柄函数

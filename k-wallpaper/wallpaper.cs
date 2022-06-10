@@ -21,7 +21,7 @@ namespace k_wallpaper
 
         public string path;
 
-        private string oldWallpaperFolder;
+        private string oldWallpaperPath;
 
         private wallpapercore wallpaperCore;
 
@@ -30,7 +30,12 @@ namespace k_wallpaper
         public wallpaper()
         {
             Fullscreen = util.GetFullscreen();
-            oldWallpaperFolder = $"C:\\Users\\{Environment.UserName}\\AppData\\Roaming\\Microsoft\\Windows\\Themes\\CachedFiles\\";
+            StringBuilder wallPaperPath = new StringBuilder(200);
+            if (util.SystemParametersInfo(util.SPI_GETDESKWALLPAPER, 200, wallPaperPath, 0))
+            {
+                oldWallpaperPath = wallPaperPath.ToString();
+            }
+            //oldWallpaperPath = $"C:\\Users\\{Environment.UserName}\\AppData\\Roaming\\Microsoft\\Windows\\Themes\\CachedFiles\\";
             //生成WorkerW窗口
             util.SendMessage(util.FindWindow("Progman", null), 0x052C, 0, 0);
             //遍历顶级窗口
@@ -78,10 +83,6 @@ namespace k_wallpaper
             }
             _wallpapernote = new wallpapernote();
 
-/*            UITableLayoutPanel p = new UITableLayoutPanel();
-            NoteMain.load(p);
-            wallpapercore._wallpaper.Window.Controls.Add(p);
-            wallpapercore._wallpaper.Window.Controls.Find(p).BringToFront();*/
 
 
         }
@@ -90,7 +91,7 @@ namespace k_wallpaper
         {
             try
             {
-                foreach (var file in new DirectoryInfo(oldWallpaperFolder).GetFiles())
+                /*foreach (var file in new DirectoryInfo(oldWallpaperPath).GetFiles())
                 {
                     if (file.Name.Contains(Fullscreen.Height.ToString()) && file.Name.Contains(Fullscreen.Width.ToString()))
                     {
@@ -98,7 +99,9 @@ namespace k_wallpaper
                         Graphics.FromHdc(util.GetDC(Handle)).DrawImage(Image.FromFile(file.FullName), Fullscreen);
                         break;
                     }
-                }
+                }*/
+
+                Graphics.FromHdc(util.GetDC(Handle)).DrawImage(Image.FromFile(oldWallpaperPath), Fullscreen);
             }
                    
             catch (FileNotFoundException exception)
