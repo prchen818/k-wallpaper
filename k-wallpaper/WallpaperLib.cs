@@ -34,7 +34,7 @@ namespace k_wallpaper
             {
                 ofd.Title = "导入壁纸库";
                 //此处之后的后缀还需要修改
-                ofd.Filter = "JPEG|*.jpg;*.jpeg|MP4|*.mp4|PNG|*.png|GIF|*.gif";
+                ofd.Filter = "ALL|*.*|JPEG|*.jpg;*.jpeg|MP4|*.mp4|PNG|*.png|GIF|*.gif";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     if (ofd.FileName != null)
