@@ -24,11 +24,7 @@ namespace k_wallpaper
         }
         public static wallpaper k_w = new wallpaper();
 
-        private void uiButton1_Click(object sender, EventArgs e)
-        {
-            instruction frm = new instruction();
-            frm.ShowDialog();
-        }
+     
 
         private void uiLinkLabel1_Click(object sender, EventArgs e)
         {

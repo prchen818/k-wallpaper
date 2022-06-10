@@ -52,7 +52,7 @@
             this.wd.MinimumSize = new System.Drawing.Size(1, 16);
             this.wd.Name = "wd";
             this.wd.ShowText = false;
-            this.wd.Size = new System.Drawing.Size(150, 35);
+            this.wd.Size = new System.Drawing.Size(459, 35);
             this.wd.TabIndex = 1;
             this.wd.Text = "uiTextBox1";
             this.wd.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -62,7 +62,7 @@
             // 
             this.Btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Btn.Location = new System.Drawing.Point(509, 315);
+            this.Btn.Location = new System.Drawing.Point(843, 315);
             this.Btn.MinimumSize = new System.Drawing.Size(1, 1);
             this.Btn.Name = "Btn";
             this.Btn.Size = new System.Drawing.Size(100, 35);
@@ -75,12 +75,15 @@
             // NetSearch
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::k_wallpaper.Properties.Resources._1600427341151;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.Btn);
             this.Controls.Add(this.wd);
             this.Controls.Add(this.webBrowser);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NetSearch";
-            this.Text = "Form1";
+            this.Text = "搜索";
             this.ZoomScaleRect = new System.Drawing.Rectangle(19, 19, 800, 450);
             this.ResumeLayout(false);
 

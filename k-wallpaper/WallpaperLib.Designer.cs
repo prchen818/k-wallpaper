@@ -152,8 +152,9 @@
             this.Controls.Add(this.importBtn);
             this.Controls.Add(this.uiMarkLabel1);
             this.Controls.Add(this.picBox);
+            this.MaximizeBox = false;
             this.Name = "WallpaperLib";
-            this.Text = "Form1";
+            this.Text = "本地壁纸";
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 800, 450);
             this.leftPanel.ResumeLayout(false);
             this.ResumeLayout(false);

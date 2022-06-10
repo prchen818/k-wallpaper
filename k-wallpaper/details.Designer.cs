@@ -34,7 +34,7 @@ namespace k_wallpaper
             this.Btn2PS = new Sunny.UI.UIButton();
             this.Btn_rename = new Sunny.UI.UIButton();
             this.picName = new Sunny.UI.UIMarkLabel();
-            this.picbox = new WallpaperBox();
+            this.picbox = new k_wallpaper.WallpaperBox();
             this.renameText = new Sunny.UI.UITextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picbox)).BeginInit();
             this.SuspendLayout();
@@ -144,6 +144,7 @@ namespace k_wallpaper
             this.Controls.Add(this.Btn2PS);
             this.Controls.Add(this.setwallpaper);
             this.Controls.Add(this.uiLabel4);
+            this.MaximizeBox = false;
             this.Name = "details";
             this.Text = "自定义壁纸";
             this.ZoomScaleRect = new System.Drawing.Rectangle(30, 30, 874, 649);

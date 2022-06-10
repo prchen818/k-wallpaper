@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainform));
             this.uiImageButton1 = new Sunny.UI.UIImageButton();
             this.uiImageButton2 = new Sunny.UI.UIImageButton();
-            this.uiButton1 = new Sunny.UI.UIButton();
             this.uiLinkLabel1 = new Sunny.UI.UILinkLabel();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -74,26 +73,10 @@
             this.uiImageButton2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.uiImageButton2.Click += new System.EventHandler(this.uiImageButton2_Click);
             // 
-            // uiButton1
-            // 
-            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton1.FillColor = System.Drawing.SystemColors.AppWorkspace;
-            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.Location = new System.Drawing.Point(857, 548);
-            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(220, 78);
-            this.uiButton1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiButton1.TabIndex = 2;
-            this.uiButton1.Text = "使用说明";
-            this.uiButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
-            // 
             // uiLinkLabel1
             // 
             this.uiLinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
-            this.uiLinkLabel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.uiLinkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.uiLinkLabel1.Font = new System.Drawing.Font("微软雅黑", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiLinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
             this.uiLinkLabel1.LinkColor = System.Drawing.Color.White;
@@ -121,12 +104,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Btn_exit});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(101, 26);
             // 
             // Btn_exit
             // 
             this.Btn_exit.Name = "Btn_exit";
-            this.Btn_exit.Size = new System.Drawing.Size(180, 22);
+            this.Btn_exit.Size = new System.Drawing.Size(100, 22);
             this.Btn_exit.Text = "退出";
             this.Btn_exit.Click += new System.EventHandler(this.Btn_exit_Click);
             // 
@@ -138,9 +121,9 @@
             this.ClientSize = new System.Drawing.Size(1161, 760);
             this.ControlBoxFillHoverColor = System.Drawing.SystemColors.ActiveBorder;
             this.Controls.Add(this.uiLinkLabel1);
-            this.Controls.Add(this.uiButton1);
             this.Controls.Add(this.uiImageButton2);
             this.Controls.Add(this.uiImageButton1);
+            this.MaximizeBox = false;
             this.Name = "Mainform";
             this.RectColor = System.Drawing.SystemColors.ActiveBorder;
             this.Style = Sunny.UI.UIStyle.Custom;
@@ -158,7 +141,6 @@
 
         private Sunny.UI.UIImageButton uiImageButton1;
         private Sunny.UI.UIImageButton uiImageButton2;
-        private Sunny.UI.UIButton uiButton1;
         private Sunny.UI.UILinkLabel uiLinkLabel1;
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
