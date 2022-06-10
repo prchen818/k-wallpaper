@@ -30,12 +30,12 @@ namespace k_wallpaper
         public wallpaper()
         {
             Fullscreen = util.GetFullscreen();
-            StringBuilder wallPaperPath = new StringBuilder(200);
+/*            StringBuilder wallPaperPath = new StringBuilder(200);
             if (util.SystemParametersInfo(util.SPI_GETDESKWALLPAPER, 200, wallPaperPath, 0))
             {
                 oldWallpaperPath = wallPaperPath.ToString();
-            }
-            //oldWallpaperPath = $"C:\\Users\\{Environment.UserName}\\AppData\\Roaming\\Microsoft\\Windows\\Themes\\CachedFiles\\";
+            }*/
+            oldWallpaperPath = $"C:\\Users\\{Environment.UserName}\\AppData\\Roaming\\Microsoft\\Windows\\Themes\\CachedFiles\\";
             //生成WorkerW窗口
             util.SendMessage(util.FindWindow("Progman", null), 0x052C, 0, 0);
             //遍历顶级窗口
@@ -91,17 +91,17 @@ namespace k_wallpaper
         {
             try
             {
-                /*foreach (var file in new DirectoryInfo(oldWallpaperPath).GetFiles())
+                foreach (var file in new DirectoryInfo(oldWallpaperPath).GetFiles())
                 {
                     if (file.Name.Contains(Fullscreen.Height.ToString()) && file.Name.Contains(Fullscreen.Width.ToString()))
                     {
-                        
+
                         Graphics.FromHdc(util.GetDC(Handle)).DrawImage(Image.FromFile(file.FullName), Fullscreen);
                         break;
                     }
-                }*/
+                }
 
-                Graphics.FromHdc(util.GetDC(Handle)).DrawImage(Image.FromFile(oldWallpaperPath), Fullscreen);
+                //.FromHdc(util.GetDC(Handle)).DrawImage(Image.FromFile(oldWallpaperPath), Fullscreen);
             }
                    
             catch (FileNotFoundException exception)
