@@ -45,6 +45,7 @@ namespace k_wallpaper
         
         private void Btn_rename_Click(object sender, EventArgs e)
         {
+            picName.Visible = false;
             renameText.Visible = true;
             renameText.Focus();
         }
@@ -53,7 +54,6 @@ namespace k_wallpaper
 
         private void Rename()
         {
-            picName.Visible = false;
             string srcPath = picbox.wpLocation;
             string dicPath = Path.GetDirectoryName(srcPath);
             string extension = Path.GetExtension(srcPath);
@@ -70,6 +70,7 @@ namespace k_wallpaper
                     {
                         File.Move(srcPath, desPath);
                         picName.Text = renameText.Text;
+                        picbox.wpLocation = desPath;
                         HistoryHelper.Write_Json(srcPath);
                     }
                     catch (Exception ex)
