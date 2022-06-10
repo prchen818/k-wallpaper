@@ -74,7 +74,7 @@ namespace k_wallpaper
                 jobj.Add(new JProperty("Date", Date));
                 jobj.Add(new JProperty("Time", Time));
                 jobj.Add(new JProperty("EventType", eventtype));
-                jobj.Add(new JProperty("Expaination", explaination));
+                jobj.Add(new JProperty("Explaination", explaination));
                 jsonObject["EasyNote"].Last.AddAfterSelf(jobj);
                 string convertingString = Convert.ToString(jsonObject);
                 File.WriteAllText("MessageSaving.json",convertingString);
