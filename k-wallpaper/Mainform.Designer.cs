@@ -101,15 +101,16 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Btn_exit});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(101, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(109, 28);
             // 
             // Btn_exit
             // 
             this.Btn_exit.Name = "Btn_exit";
-            this.Btn_exit.Size = new System.Drawing.Size(100, 22);
+            this.Btn_exit.Size = new System.Drawing.Size(108, 24);
             this.Btn_exit.Text = "退出";
             this.Btn_exit.Click += new System.EventHandler(this.Btn_exit_Click);
             // 
@@ -123,6 +124,7 @@
             this.Controls.Add(this.uiLinkLabel1);
             this.Controls.Add(this.uiImageButton2);
             this.Controls.Add(this.uiImageButton1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Mainform";
             this.RectColor = System.Drawing.SystemColors.ActiveBorder;
