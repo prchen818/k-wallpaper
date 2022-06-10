@@ -29,7 +29,11 @@ namespace k_wallpaper
             //uiDataGridView1.DataSource = new BindingList<CJson>(cJsons);
             
             for (int i = 0; i < cJsons.Count; i++)
-            {
+            {   
+                if(cJsons[i].title==null)
+                {
+                    continue;
+                }
                 int row1 = this.uiDataGridView1.Rows.Add();
                 this.uiDataGridView1.Rows[row1].Cells[0].Value = cJsons[i].title;
                 this.uiDataGridView1.Rows[row1].Cells[1].Value = cJsons[i].Date;

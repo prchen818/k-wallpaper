@@ -36,12 +36,12 @@ namespace k_wallpaper
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.uiDataGridView1 = new Sunny.UI.UIDataGridView();
-            this.cJsonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Event = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Explaination = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cJsonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJsonBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -103,10 +103,6 @@ namespace k_wallpaper
             this.uiDataGridView1.TabIndex = 0;
             this.uiDataGridView1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
-            // cJsonBindingSource
-            // 
-            this.cJsonBindingSource.DataSource = typeof(k_wallpaper.CJson);
-            // 
             // Event
             // 
             this.Event.DataPropertyName = "title";
@@ -137,6 +133,10 @@ namespace k_wallpaper
             this.Explaination.HeaderText = "说明";
             this.Explaination.Name = "Explaination";
             this.Explaination.Width = 300;
+            // 
+            // cJsonBindingSource
+            // 
+            this.cJsonBindingSource.DataSource = typeof(k_wallpaper.CJson);
             // 
             // CheckAll
             // 

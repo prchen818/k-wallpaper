@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using ThirdParty.Json.LitJson;
 
 namespace k_wallpaper
 {
@@ -16,11 +17,26 @@ namespace k_wallpaper
         public static List<CJson> Read_Json()
         {
                 List<CJson> jlist = new List<CJson>();
-
+                StreamReader reader;
             try
             {
                 int i = 0;
-                StreamReader reader = File.OpenText("MessageSaving.json");
+                if(File.Exists("MessageSaving.json"))
+                {
+                    reader = File.OpenText("MessageSaving.json");
+
+                }
+                else
+                {
+                    
+                    string json = JsonMapper.ToJson(new CJson());
+                    CJson cJson = new CJson();
+                    StreamWriter sw = new StreamWriter("MessageSaving.json");
+                    sw.Write("{" + "\"EasyNote\":" + "[{}]}");
+                    sw.Close(); 
+                    MyJsonHelper.Write_Json(cJson.title,cJson.Date,cJson.Time,cJson.EventType,cJson.Explaination);
+                    reader = File.OpenText("MessageSaving.json");
+                }
                 JsonTextReader jsonTextReader = new JsonTextReader(reader);
                 JObject jsonObject = new JObject();
                 jsonObject=(JObject)JToken.ReadFrom(jsonTextReader);
@@ -40,10 +56,10 @@ namespace k_wallpaper
                 reader.Close();
                 return jlist;
             }
-            catch
+            catch(Exception ex)
             {
                 
-                MessageBox.Show("error");
+                
                 return null;
             }
         }
@@ -63,10 +79,10 @@ namespace k_wallpaper
                 string convertingString = Convert.ToString(jsonObject);
                 File.WriteAllText("MessageSaving.json",convertingString);
             }
-            catch
+            catch(Exception ex)
             {
                 
-                MessageBox.Show("error");
+                MessageBox.Show(ex.Message);
             }
         }
 
