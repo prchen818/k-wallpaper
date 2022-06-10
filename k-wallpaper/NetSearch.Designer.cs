@@ -35,11 +35,10 @@
             // 
             // webBrowser
             // 
-            this.webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowser.Location = new System.Drawing.Point(0, 35);
             this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(1280, 685);
+            this.webBrowser.Size = new System.Drawing.Size(1280, 682);
             this.webBrowser.TabIndex = 0;
             this.webBrowser.Visible = false;
             // 
@@ -54,8 +53,8 @@
             this.wd.ShowText = false;
             this.wd.Size = new System.Drawing.Size(459, 35);
             this.wd.TabIndex = 1;
-            this.wd.Text = "uiTextBox1";
             this.wd.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.wd.Watermark = "输入关键词";
             this.wd.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
             // Btn
