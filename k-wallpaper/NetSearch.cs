@@ -22,7 +22,8 @@ namespace k_wallpaper
         {
             if (wd.Text != "")
             {
-                string url = "https://cn.bing.com/images/search?q=" + wd.Text + "&qft=+filterui:imagesize-custom_1920_1080";
+                string url = "https://cn.bing.com/images/search?q=" +
+                    wd.Text + "&qft=+filterui:imagesize-custom_1920_1080";
                 webBrowser.Navigate(url);
                 webBrowser.Visible = true;
                 wd.Visible = false;

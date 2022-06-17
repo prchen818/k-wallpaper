@@ -172,16 +172,4 @@ namespace k_wallpaper
         }
     }
     
-    public  class itemwallpaperbox:PictureBox
-    {
-        public string path;
-         public itemwallpaperbox() : base()
-        {
-
-        }
-
-    }
-
-   
-
 }
