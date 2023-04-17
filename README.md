@@ -4,7 +4,7 @@
 c#大作业——改进的桌面壁纸软件
 
 #### 软件架构
-软件架构说明
+.Net Core 3.1
 
 
 #### 安装教程
@@ -15,23 +15,18 @@ c#大作业——改进的桌面壁纸软件
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  自行上传壁纸，允许JPG，PNG，MP4等
+2.  关闭默认最小化到托盘
+3.  日程表显示在壁纸层
 
 #### 参与贡献
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+- WHU prchen818
+- WHU joey-van
+- WHU Setsailor
+- WHU Shengkang Gu
 
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+#### Issue
+软件基本功能大致完整，bug不多，正常使用问题不大，许多功能可以优化
+如果有人真的希望使用，欢迎提出issue，作者很乐意继续维护
+否则这个项目暂时将不会有任何更新
